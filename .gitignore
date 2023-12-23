@@ -39,3 +39,4 @@ Logs/*
 Icon?
 ehthumbs.db
 Thumbs.db
+*.log
