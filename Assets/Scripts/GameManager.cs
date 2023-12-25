@@ -25,12 +25,15 @@ public class GameManager : MonoBehaviour
     private bool gameOver = false;
     private int wave = 0;
     private float timeRemaining;
-    public bool addedOpenBox = false;
+    public bool addedCorrectBox = false;
     public GameObject addedBox;
 
     void Start()
     {
-        timeRemaining = 10f;
+        wrappingPaperImg.sprite = null;
+        stickerImg.sprite = null;
+
+        timeRemaining = 35f;
         StartNewWave(3);
     }
 
@@ -54,10 +57,19 @@ public class GameManager : MonoBehaviour
             //handle customers
             if (!handlingCustomer)
             {
+                //setup customer handling
                 handlingCustomer = true;
                 objectToWrap = Instantiate(giftOptions[Random.Range(0, giftOptions.Length)], objectPosition.position, Quaternion.identity);
                 Customer currentCustomer = customers.Peek();
                 DisplayRequirements(currentCustomer);
+            }
+            else
+            {
+                //handle customer
+                if (addedCorrectBox)
+                {
+                    Debug.Log("Keep it going");
+                }
             }
         }
     }
