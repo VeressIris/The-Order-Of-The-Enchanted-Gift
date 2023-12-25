@@ -984,8 +984,8 @@ RectTransform:
   m_Children:
   - {fileID: 736928479}
   - {fileID: 1377138431}
-  - {fileID: 2049010434}
   - {fileID: 1098120458}
+  - {fileID: 2049010434}
   - {fileID: 688743586}
   - {fileID: 321288113}
   - {fileID: 1039884066}
@@ -1499,6 +1499,7 @@ GameObject:
   - component: {fileID: 1098120461}
   - component: {fileID: 1098120460}
   - component: {fileID: 1098120459}
+  - component: {fileID: 1098120462}
   m_Layer: 5
   m_Name: mediumBoxButton
   m_TagString: Untagged
@@ -1569,9 +1570,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: AddObject, Assembly-CSharp
-        m_MethodName: 
+      - m_Target: {fileID: 1098120462}
+        m_TargetAssemblyTypeName: GiftWrapping, Assembly-CSharp
+        m_MethodName: AddBox
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1619,6 +1620,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1098120457}
   m_CullTransparentMesh: 1
+--- !u!114 &1098120462
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1098120457}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da32daed4daea4b40bd14f44046cf752, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameManager: {fileID: 1801407970}
+  boxPrefab: {fileID: 3621256841897419549, guid: 40dd609de03220341911e361fb2d5925, type: 3}
 --- !u!1 &1292294754
 GameObject:
   m_ObjectHideFlags: 0
@@ -1764,6 +1779,7 @@ GameObject:
   - component: {fileID: 1377138434}
   - component: {fileID: 1377138433}
   - component: {fileID: 1377138432}
+  - component: {fileID: 1377138435}
   m_Layer: 5
   m_Name: bigBoxButton
   m_TagString: Untagged
@@ -1834,9 +1850,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: AddObject, Assembly-CSharp
-        m_MethodName: 
+      - m_Target: {fileID: 1377138435}
+        m_TargetAssemblyTypeName: GiftWrapping, Assembly-CSharp
+        m_MethodName: AddBox
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1884,6 +1900,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1377138430}
   m_CullTransparentMesh: 1
+--- !u!114 &1377138435
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1377138430}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da32daed4daea4b40bd14f44046cf752, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameManager: {fileID: 1801407970}
+  boxPrefab: {fileID: 994110748651046194, guid: be4ba575816e21642890415f919cca53, type: 3}
 --- !u!1 &1801407968
 GameObject:
   m_ObjectHideFlags: 0
@@ -1928,12 +1958,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd3f4c1cdba941145a28e47fea5ed3f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectPosition: {fileID: 1972977035}
-  timerAndWaveText: {fileID: 736928480}
   customerPrefab: {fileID: 4670666239981197367, guid: 27c544aa164abc04abcce9a1f15aab82, type: 3}
   initCustomerPos: {fileID: 46440988}
-  wrappingPaperImg: {fileID: 1963673152}
-  stickerImg: {fileID: 571552803}
   giftOptions:
   - {fileID: 8882748690809470118, guid: ce42e2c882ec7c84fb5e5ffcbdcabf7f, type: 3}
   - {fileID: 1913318328932772269, guid: 11545404fe3e64d498392352c0158a47, type: 3}
@@ -1942,6 +1968,11 @@ MonoBehaviour:
   - {fileID: 5555084262943453141, guid: 9ed568584c207244aa4602e1b19e0355, type: 3}
   - {fileID: 7310235742213405372, guid: cba96182a191caf4fa2ecead45bc5426, type: 3}
   - {fileID: 3152535682218383425, guid: dd925421106b649459d6563a8e79fe34, type: 3}
+  objectPosition: {fileID: 1972977035}
+  wrappingPaperImg: {fileID: 1963673152}
+  stickerImg: {fileID: 571552803}
+  objectToWrap: {fileID: 0}
+  timerAndWaveText: {fileID: 736928480}
 --- !u!1 &1963673150
 GameObject:
   m_ObjectHideFlags: 0
@@ -2042,7 +2073,7 @@ Transform:
   m_GameObject: {fileID: 1972977034}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -3.5, z: 0}
+  m_LocalPosition: {x: 0, y: -3.9, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2128,6 +2159,7 @@ GameObject:
   - component: {fileID: 2049010437}
   - component: {fileID: 2049010436}
   - component: {fileID: 2049010435}
+  - component: {fileID: 2049010438}
   m_Layer: 5
   m_Name: smallBoxButton
   m_TagString: Untagged
@@ -2198,9 +2230,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: AddObject, Assembly-CSharp
-        m_MethodName: 
+      - m_Target: {fileID: 2049010438}
+        m_TargetAssemblyTypeName: GiftWrapping, Assembly-CSharp
+        m_MethodName: AddBox
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2248,6 +2280,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2049010433}
   m_CullTransparentMesh: 1
+--- !u!114 &2049010438
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2049010433}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da32daed4daea4b40bd14f44046cf752, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameManager: {fileID: 1801407970}
+  boxPrefab: {fileID: 2470626647917036666, guid: 0ea40008a62152a4584668b032c78cd2, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

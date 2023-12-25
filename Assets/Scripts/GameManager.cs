@@ -7,20 +7,26 @@ using System.Transactions;
 
 public class GameManager : MonoBehaviour
 {
-    private bool gameOver = false;
-    [SerializeField] private Transform objectPosition;
-    [SerializeField] private TMP_Text timerAndWaveText;
-    private int wave = 0;
-    private float timeRemaining;
-    private int customersServed = 0;
+    [Header("Customers:")]
     [SerializeField] private GameObject customerPrefab;
     [SerializeField] private Transform initCustomerPos;
+    private int customersServed = 0;
     private Queue<Customer> customers = new Queue<Customer>();
     private Vector3[] customersPos;
+    private bool handlingCustomer = false;
+    [Header("Gifts:")]
+    [SerializeField] private GameObject[] giftOptions;
+    public Transform objectPosition;
     [SerializeField] private Image wrappingPaperImg;
     [SerializeField] private Image stickerImg;
-    bool handlingCustomer = false;
-    [SerializeField] private GameObject[] giftOptions;
+    public GameObject objectToWrap;
+    [Header("Game:")]
+    [SerializeField] private TMP_Text timerAndWaveText;
+    private bool gameOver = false;
+    private int wave = 0;
+    private float timeRemaining;
+    public bool addedOpenBox = false;
+    public GameObject addedBox;
 
     void Start()
     {
@@ -49,7 +55,7 @@ public class GameManager : MonoBehaviour
             if (!handlingCustomer)
             {
                 handlingCustomer = true;
-                GameObject objectToWrap = Instantiate(giftOptions[Random.Range(0, giftOptions.Length)], objectPosition.position, Quaternion.identity);
+                objectToWrap = Instantiate(giftOptions[Random.Range(0, giftOptions.Length)], objectPosition.position, Quaternion.identity);
                 Customer currentCustomer = customers.Peek();
                 DisplayRequirements(currentCustomer);
             }
