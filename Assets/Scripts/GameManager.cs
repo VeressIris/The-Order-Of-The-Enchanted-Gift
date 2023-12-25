@@ -20,6 +20,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Image wrappingPaperImg;
     [SerializeField] private Image stickerImg;
     public GameObject objectToWrap;
+    [SerializeField] private Sprite closedBoxSprite;
     [Header("Game:")]
     [SerializeField] private TMP_Text timerAndWaveText;
     private bool gameOver = false;
@@ -68,10 +69,36 @@ public class GameManager : MonoBehaviour
                 //handle customer
                 if (addedCorrectBox)
                 {
-                    Debug.Log("Keep it going");
+                    //close box
+                    if (Input.GetMouseButtonDown(0))
+                    {
+                        if (BoxClicked())
+                        {
+                            addedBox.GetComponent<SpriteRenderer>().sprite = closedBoxSprite;
+                        }
+                    }
                 }
             }
         }
+    }
+
+    //handles box wrapping evolution
+    bool BoxClicked()
+    {
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        RaycastHit2D hit = Physics2D.Raycast(ray.origin, ray.direction);
+
+        if (hit.collider != null)
+        {
+            GameObject objectHit = hit.collider.gameObject;
+            if (objectHit.layer == LayerMask.NameToLayer("UnwrappedBox"))
+            {
+                objectHit.layer = LayerMask.NameToLayer("ClosedBox");
+                return true;
+            }
+        }
+
+        return false;
     }
 
     void UpdateTimer(float time)

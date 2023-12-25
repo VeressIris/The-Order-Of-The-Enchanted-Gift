@@ -166,6 +166,7 @@ GameObject:
   - component: {fileID: 202034789}
   - component: {fileID: 202034788}
   - component: {fileID: 202034787}
+  - component: {fileID: 202034791}
   - component: {fileID: 202034790}
   m_Layer: 5
   m_Name: wrappingPaper4Button
@@ -236,7 +237,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 202034788}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 202034791}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &202034788
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -287,6 +300,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd4f9abf70b73d14185a25c437951c82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &202034791
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 202034785}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da32daed4daea4b40bd14f44046cf752, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameManager: {fileID: 1801407970}
+  boxPrefab: {fileID: 994110748651046194, guid: be4ba575816e21642890415f919cca53, type: 3}
+  tapePrefab: {fileID: 3922129754420681519, guid: 90d4e65c9cd436248a6b39593dc941b7, type: 3}
+  matchingWrappedBoxSprite: {fileID: 21300000, guid: fa5c12a8ed4e97c41a6956db5ed525c8, type: 3}
 --- !u!1 &302071970
 GameObject:
   m_ObjectHideFlags: 0
@@ -383,6 +412,7 @@ GameObject:
   - component: {fileID: 321288116}
   - component: {fileID: 321288115}
   - component: {fileID: 321288114}
+  - component: {fileID: 321288118}
   - component: {fileID: 321288117}
   m_Layer: 5
   m_Name: 'wrappingPaper2Button '
@@ -453,7 +483,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 321288115}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 321288118}
+        m_TargetAssemblyTypeName: GiftWrapping, Assembly-CSharp
+        m_MethodName: WrapBox
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &321288115
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -504,6 +546,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd4f9abf70b73d14185a25c437951c82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &321288118
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 321288112}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da32daed4daea4b40bd14f44046cf752, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameManager: {fileID: 1801407970}
+  boxPrefab: {fileID: 994110748651046194, guid: be4ba575816e21642890415f919cca53, type: 3}
+  tapePrefab: {fileID: 3922129754420681519, guid: 90d4e65c9cd436248a6b39593dc941b7, type: 3}
+  matchingWrappedBoxSprite: {fileID: 21300000, guid: 0e3e8de3a2786b845b2b825f9619851c, type: 3}
 --- !u!1 &441233126
 GameObject:
   m_ObjectHideFlags: 0
@@ -692,6 +750,7 @@ GameObject:
   - component: {fileID: 563443330}
   - component: {fileID: 563443329}
   - component: {fileID: 563443328}
+  - component: {fileID: 563443332}
   - component: {fileID: 563443331}
   m_Layer: 5
   m_Name: wrappingPaper5Button
@@ -762,7 +821,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 563443329}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 563443332}
+        m_TargetAssemblyTypeName: GiftWrapping, Assembly-CSharp
+        m_MethodName: WrapBox
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &563443329
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -813,6 +884,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd4f9abf70b73d14185a25c437951c82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &563443332
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 563443326}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da32daed4daea4b40bd14f44046cf752, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameManager: {fileID: 1801407970}
+  boxPrefab: {fileID: 994110748651046194, guid: be4ba575816e21642890415f919cca53, type: 3}
+  tapePrefab: {fileID: 3922129754420681519, guid: 90d4e65c9cd436248a6b39593dc941b7, type: 3}
+  matchingWrappedBoxSprite: {fileID: 21300000, guid: 1837379914969f54c8dbaae24a23eb1a, type: 3}
 --- !u!1 &571552801
 GameObject:
   m_ObjectHideFlags: 0
@@ -1013,6 +1100,7 @@ GameObject:
   - component: {fileID: 688743589}
   - component: {fileID: 688743588}
   - component: {fileID: 688743587}
+  - component: {fileID: 688743591}
   - component: {fileID: 688743590}
   m_Layer: 5
   m_Name: wrappingPaper1Button
@@ -1083,7 +1171,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 688743588}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 688743591}
+        m_TargetAssemblyTypeName: GiftWrapping, Assembly-CSharp
+        m_MethodName: WrapBox
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &688743588
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1134,6 +1234,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd4f9abf70b73d14185a25c437951c82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &688743591
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 688743585}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da32daed4daea4b40bd14f44046cf752, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameManager: {fileID: 1801407970}
+  boxPrefab: {fileID: 994110748651046194, guid: be4ba575816e21642890415f919cca53, type: 3}
+  tapePrefab: {fileID: 3922129754420681519, guid: 90d4e65c9cd436248a6b39593dc941b7, type: 3}
+  matchingWrappedBoxSprite: {fileID: 21300000, guid: b35162b25b110ae41a019b526711c680, type: 3}
 --- !u!1 &736928478
 GameObject:
   m_ObjectHideFlags: 0
@@ -1366,6 +1482,7 @@ GameObject:
   - component: {fileID: 1039884069}
   - component: {fileID: 1039884068}
   - component: {fileID: 1039884067}
+  - component: {fileID: 1039884071}
   - component: {fileID: 1039884070}
   m_Layer: 5
   m_Name: 'wrappingPaper3Button '
@@ -1436,7 +1553,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1039884068}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1039884071}
+        m_TargetAssemblyTypeName: GiftWrapping, Assembly-CSharp
+        m_MethodName: WrapBox
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1039884068
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1487,6 +1616,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd4f9abf70b73d14185a25c437951c82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1039884071
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1039884065}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da32daed4daea4b40bd14f44046cf752, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameManager: {fileID: 1801407970}
+  boxPrefab: {fileID: 994110748651046194, guid: be4ba575816e21642890415f919cca53, type: 3}
+  tapePrefab: {fileID: 3922129754420681519, guid: 90d4e65c9cd436248a6b39593dc941b7, type: 3}
+  matchingWrappedBoxSprite: {fileID: 21300000, guid: 551678a88ace0d445b531f741ef0a4ed, type: 3}
 --- !u!1 &1098120457
 GameObject:
   m_ObjectHideFlags: 0
@@ -1634,6 +1779,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameManager: {fileID: 1801407970}
   boxPrefab: {fileID: 3621256841897419549, guid: 40dd609de03220341911e361fb2d5925, type: 3}
+  tapePrefab: {fileID: 0}
+  matchingWrappedBoxSprite: {fileID: 0}
 --- !u!1 &1292294754
 GameObject:
   m_ObjectHideFlags: 0
@@ -1647,6 +1794,7 @@ GameObject:
   - component: {fileID: 1292294758}
   - component: {fileID: 1292294757}
   - component: {fileID: 1292294756}
+  - component: {fileID: 1292294760}
   m_Layer: 5
   m_Name: ductTapeButton
   m_TagString: Untagged
@@ -1728,7 +1876,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1292294758}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1292294760}
+        m_TargetAssemblyTypeName: GiftWrapping, Assembly-CSharp
+        m_MethodName: AddDuctTape
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1292294758
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1767,6 +1927,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1292294754}
   m_CullTransparentMesh: 1
+--- !u!114 &1292294760
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1292294754}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da32daed4daea4b40bd14f44046cf752, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameManager: {fileID: 1801407970}
+  boxPrefab: {fileID: 2470626647917036666, guid: 0ea40008a62152a4584668b032c78cd2, type: 3}
+  tapePrefab: {fileID: 3922129754420681519, guid: 90d4e65c9cd436248a6b39593dc941b7, type: 3}
+  matchingWrappedBoxSprite: {fileID: 0}
 --- !u!1 &1377138430
 GameObject:
   m_ObjectHideFlags: 0
@@ -1914,6 +2090,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameManager: {fileID: 1801407970}
   boxPrefab: {fileID: 994110748651046194, guid: be4ba575816e21642890415f919cca53, type: 3}
+  tapePrefab: {fileID: 0}
+  matchingWrappedBoxSprite: {fileID: 0}
 --- !u!1 &1801407968
 GameObject:
   m_ObjectHideFlags: 0
@@ -1972,7 +2150,10 @@ MonoBehaviour:
   wrappingPaperImg: {fileID: 1963673152}
   stickerImg: {fileID: 571552803}
   objectToWrap: {fileID: 0}
+  closedBoxSprite: {fileID: 21300000, guid: e4038983f357a0542aa711d064fb8a52, type: 3}
   timerAndWaveText: {fileID: 736928480}
+  addedCorrectBox: 0
+  addedBox: {fileID: 0}
 --- !u!1 &1963673150
 GameObject:
   m_ObjectHideFlags: 0
@@ -2294,6 +2475,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameManager: {fileID: 1801407970}
   boxPrefab: {fileID: 2470626647917036666, guid: 0ea40008a62152a4584668b032c78cd2, type: 3}
+  tapePrefab: {fileID: 3922129754420681519, guid: 90d4e65c9cd436248a6b39593dc941b7, type: 3}
+  matchingWrappedBoxSprite: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

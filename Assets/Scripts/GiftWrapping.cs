@@ -1,11 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GiftWrapping : MonoBehaviour
 {
     [SerializeField] private GameManager gameManager;
     [SerializeField] private GameObject boxPrefab;
+    [SerializeField] private GameObject tapePrefab;
+    [SerializeField] private Sprite matchingWrappedBoxSprite;
 
     public void AddBox()
     {
@@ -29,6 +32,19 @@ public class GiftWrapping : MonoBehaviour
         {
             Debug.Log("RIGHT SIZE");
             gameManager.addedCorrectBox = true;
+        }
+    }
+
+    public void AddDuctTape()
+    {
+        Instantiate(tapePrefab, Camera.main.ScreenToWorldPoint(Input.mousePosition), Quaternion.identity);
+    }
+
+    public void WrapBox()
+    {
+        if (gameManager.addedCorrectBox)
+        {
+            gameManager.addedBox.GetComponent<SpriteRenderer>().sprite = matchingWrappedBoxSprite;
         }
     }
 }
