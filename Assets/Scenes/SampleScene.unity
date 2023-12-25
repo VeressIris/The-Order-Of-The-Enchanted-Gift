@@ -135,7 +135,7 @@ GameObject:
   m_Layer: 0
   m_Name: initCustomerPosition
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 4422084297763085224, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -1928,6 +1928,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd3f4c1cdba941145a28e47fea5ed3f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  objectPosition: {fileID: 1972977035}
   timerAndWaveText: {fileID: 736928480}
   customerPrefab: {fileID: 4670666239981197367, guid: 27c544aa164abc04abcce9a1f15aab82, type: 3}
   initCustomerPos: {fileID: 46440988}
@@ -2028,7 +2029,7 @@ GameObject:
   m_Layer: 0
   m_Name: objectPosition
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -2041,7 +2042,7 @@ Transform:
   m_GameObject: {fileID: 1972977034}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -3.07, z: 0}
+  m_LocalPosition: {x: 0, y: -3.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

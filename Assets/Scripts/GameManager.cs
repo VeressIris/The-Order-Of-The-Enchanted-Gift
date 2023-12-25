@@ -49,7 +49,7 @@ public class GameManager : MonoBehaviour
             if (!handlingCustomer)
             {
                 handlingCustomer = true;
-                GameObject objectToWrap = Instantiate(giftOptions[Random.Range(0, giftOptions.Length)], obj);
+                GameObject objectToWrap = Instantiate(giftOptions[Random.Range(0, giftOptions.Length)], objectPosition.position, Quaternion.identity);
                 Customer currentCustomer = customers.Peek();
                 DisplayRequirements(currentCustomer);
             }
