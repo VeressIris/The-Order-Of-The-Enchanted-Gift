@@ -126,7 +126,7 @@ public class GameManager : MonoBehaviour
             else
             {
                 //instantiate customers behind each other
-                customersPos[i] = customersPos[i - 1] - new Vector3(1.5f, 0f, 0f);
+                customersPos[i] = customersPos[i - 1] - new Vector3(1.825f, 0f, 0f);
                 customer = Instantiate(customerPrefab, customersPos[i], Quaternion.identity).GetComponent<Customer>(); 
             }
             customers.Enqueue(customer);
