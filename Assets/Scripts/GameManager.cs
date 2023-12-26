@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-using System.Transactions;
 
 public class GameManager : MonoBehaviour
 {
@@ -17,8 +16,8 @@ public class GameManager : MonoBehaviour
     [Header("Gifts:")]
     [SerializeField] private GameObject[] giftOptions;
     public Transform objectPosition;
-    [SerializeField] private Image wrappingPaperImg;
-    [SerializeField] private Image stickerImg;
+    public Image wrappingPaperImg;
+    public Image stickerImg;
     public GameObject objectToWrap;
     [SerializeField] private Sprite closedBoxSprite;
     [Header("Game:")]
@@ -28,8 +27,9 @@ public class GameManager : MonoBehaviour
     private float timeRemaining;
     public bool addedCorrectBox = false;
     public GameObject addedBox;
-    public bool wrappedBox = false;
-    public bool closedBox = false;
+    [HideInInspector] public bool wrappedBox = false;
+    [HideInInspector] public bool closedBox = false;
+    [HideInInspector] public bool addedSticker = false;
 
     void Start()
     {
@@ -81,8 +81,22 @@ public class GameManager : MonoBehaviour
                         }
                     }
                 }
+
+                if (FinalizedWrapping())
+                {
+                    Debug.Log("NEXT CUSTOMER!");
+                }
             }
         }
+    }
+
+    bool FinalizedWrapping()
+    {
+        if (!wrappedBox) return false;
+        GameObject sticker = GameObject.FindGameObjectWithTag("Sticker");
+        if (sticker == null) return false;
+        if (sticker.GetComponent<StickerController>().placed) return true;
+        return false;
     }
 
     //handles box wrapping evolution

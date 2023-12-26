@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class StickerController : MonoBehaviour
 {
-    private bool placed = false;
+    [HideInInspector] public bool placed = false;
 
     void Update()
     {

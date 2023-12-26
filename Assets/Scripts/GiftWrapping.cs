@@ -55,12 +55,19 @@ public class GiftWrapping : MonoBehaviour
     {
         if (gameManager.addedCorrectBox)
         {
-            Destroy(GameObject.FindGameObjectWithTag("Tape"));
-            tapeButtonController.holdingTape = false;
+            if (GetComponent<Image>().sprite == gameManager.wrappingPaperImg.sprite)
+            {
+                Destroy(GameObject.FindGameObjectWithTag("Tape"));
+                tapeButtonController.holdingTape = false;
 
-            gameManager.addedBox.GetComponent<SpriteRenderer>().sprite = matchingWrappedBoxSprite;
-            gameManager.addedBox.layer = LayerMask.NameToLayer("WrappedBox");
-            gameManager.wrappedBox = true;
+                gameManager.addedBox.GetComponent<SpriteRenderer>().sprite = matchingWrappedBoxSprite;
+                gameManager.addedBox.layer = LayerMask.NameToLayer("WrappedBox");
+                gameManager.wrappedBox = true;
+            }
+            else
+            {
+                Debug.Log("Wrong wrapping paper!");
+            }
         }
     }
 
@@ -99,10 +106,17 @@ public class GiftWrapping : MonoBehaviour
         GameObject tapeInstance = GameObject.FindGameObjectWithTag("Tape");
         if (!holdingSticker && gameManager.wrappedBox)
         {
-            if (tapeInstance != null && tapeInstance.GetComponent<TapeController>().placed)
+            if (stickerPrefab.GetComponent<SpriteRenderer>().sprite == gameManager.stickerImg.sprite)
             {
-                holdingSticker = true;
-                Instantiate(stickerPrefab, Camera.main.ScreenToWorldPoint(Input.mousePosition), Quaternion.identity);
+                if (tapeInstance != null && tapeInstance.GetComponent<TapeController>().placed)
+                {
+                    holdingSticker = true;
+                    Instantiate(stickerPrefab, Camera.main.ScreenToWorldPoint(Input.mousePosition), Quaternion.identity);
+                }
+            }
+            else
+            {
+                Debug.Log("Wrong sticker!");
             }
         }
     }
