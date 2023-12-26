@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
     private Queue<Customer> customers = new Queue<Customer>();
     private Vector3[] customersPos;
     private bool handlingCustomer = false;
+    private Customer currentCustomer;
     [Header("Gifts:")]
     [SerializeField] private GameObject[] giftOptions;
     public Transform objectPosition;
@@ -63,7 +64,7 @@ public class GameManager : MonoBehaviour
                 //setup customer handling
                 handlingCustomer = true;
                 objectToWrap = Instantiate(giftOptions[Random.Range(0, giftOptions.Length)], objectPosition.position, Quaternion.identity);
-                Customer currentCustomer = customers.Peek();
+                currentCustomer = customers.Peek();
                 DisplayRequirements(currentCustomer);
             }
             else
@@ -85,9 +86,27 @@ public class GameManager : MonoBehaviour
                 if (FinalizedWrapping())
                 {
                     Debug.Log("NEXT CUSTOMER!");
+
+                    //animate customer leaving
+                    customers.Dequeue().gameObject.GetComponent<Animator>().Play("Leave");
+                    //animate box fading out
+                    AnimateFadeOutObjects();
+
+                    //reset requirement checks
+                    addedCorrectBox = false;
+                    wrappedBox = false; 
+                    closedBox = false;
+                    addedSticker = false;
                 }
             }
         }
+    }
+
+    void AnimateFadeOutObjects()
+    {
+        addedBox.GetComponent<Animator>().Play("FadeOut");
+        GameObject.FindGameObjectWithTag("Tape").GetComponent<Animator>().Play("FadeOut");
+        GameObject.FindGameObjectWithTag("Sticker").GetComponent<Animator>().Play("FadeOut");
     }
 
     bool FinalizedWrapping()

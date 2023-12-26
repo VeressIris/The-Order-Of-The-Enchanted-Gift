@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2429965808872110259}
   - component: {fileID: 3080709119817434337}
   - component: {fileID: 6415676870084092920}
+  - component: {fileID: 6456633830107173210}
   m_Layer: 0
   m_Name: telescope
   m_TagString: Big
@@ -106,3 +107,15 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &6456633830107173210
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7310235742213405372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d7d381ae91ceff4ca655a2726173e2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

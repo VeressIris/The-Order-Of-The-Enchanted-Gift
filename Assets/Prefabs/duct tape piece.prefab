@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 6086625320953499262}
   - component: {fileID: 8060573222966289172}
   - component: {fileID: 2601708805213794554}
+  - component: {fileID: -131227043016888947}
+  - component: {fileID: -3714185562085840981}
   m_Layer: 0
   m_Name: duct tape piece
   m_TagString: Tape
@@ -95,5 +97,39 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 414375249d44a8c47a06a9549dd56931, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  placed: 0
+--- !u!95 &-131227043016888947
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3922129754420681519}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c8bb204e608af9c40b95307e90074ed4, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &-3714185562085840981
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3922129754420681519}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d7d381ae91ceff4ca655a2726173e2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

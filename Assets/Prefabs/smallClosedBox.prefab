@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 6795939232685226044}
   - component: {fileID: 314250143187049011}
   - component: {fileID: -2731828227450281531}
+  - component: {fileID: 3628794580989425789}
+  - component: {fileID: -4368787991711065138}
   m_Layer: 3
   m_Name: smallClosedBox
   m_TagString: Untagged
@@ -130,3 +132,36 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 15.52, y: 15.96}
   m_EdgeRadius: 0
+--- !u!95 &3628794580989425789
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1678312525628761729}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c8bb204e608af9c40b95307e90074ed4, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &-4368787991711065138
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1678312525628761729}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d7d381ae91ceff4ca655a2726173e2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

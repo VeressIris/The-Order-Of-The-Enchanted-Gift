@@ -78,6 +78,10 @@ public class GiftWrapping : MonoBehaviour
         {
             time += Time.deltaTime;
 
+            if (gameManager.objectToWrap == null)
+            {
+                break;
+            }
             gameManager.objectToWrap.transform.position = Vector3.Lerp(gameManager.objectToWrap.transform.position,
                 targetPos, speed * Time.deltaTime);
             yield return null;
@@ -95,9 +99,6 @@ public class GiftWrapping : MonoBehaviour
         
             Animator animator = gameManager.objectToWrap.GetComponent<Animator>();
             animator.Play("FadeOut", 0);
-
-            yield return new WaitForSeconds(duration);
-            Destroy(gameManager.objectToWrap);
         }
     }
 
