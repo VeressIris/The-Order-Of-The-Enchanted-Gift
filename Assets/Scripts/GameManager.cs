@@ -56,10 +56,8 @@ public class GameManager : MonoBehaviour
             }
             else
             {
-                Debug.Log($"Wave {wave} over!");
-                timeRemaining = Random.Range(30f, 120f); //reset timer
-                numCustomers = Random.Range(2, 13); //reset num customers
-                StartNewWave();
+                gameOver = true;
+                Debug.Log("GAME OVER");
             }
 
             //handle customers
