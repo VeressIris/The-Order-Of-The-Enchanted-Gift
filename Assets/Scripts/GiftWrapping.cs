@@ -14,6 +14,12 @@ public class GiftWrapping : MonoBehaviour
     [HideInInspector] public bool holdingSticker = false;
     [SerializeField] private GameObject stickerPrefab;
     [SerializeField] private GiftWrapping tapeButtonController;
+    [SerializeField] private AudioSource audioSrc;
+    [SerializeField] private AudioClip boxSFX;
+    [SerializeField] private AudioClip[] tapeSFX;
+    [SerializeField] private AudioClip wrappedBoxSFX;
+    [SerializeField] private AudioClip stickerSFX;
+    [SerializeField] private AudioClip wrongSFX;
 
     public void AddBox()
     {
@@ -22,20 +28,28 @@ public class GiftWrapping : MonoBehaviour
 
         StartCoroutine(RaiseObject(0.46f));
 
+        audioSrc.clip = boxSFX;
+
         if (gameManager.addedBox == null)
         {
             gameManager.addedBox = Instantiate(boxPrefab, gameManager.objectPosition.position, Quaternion.identity);
+            audioSrc.Play();
         }
         else
         {
             //replace old box with new box
             Destroy(gameManager.addedBox);
             gameManager.addedBox = Instantiate(boxPrefab, gameManager.objectPosition.position, Quaternion.identity);
+
+            audioSrc.Play();
             
         }
         if (gameManager.addedBox.tag != gameManager.objectToWrap.tag)
         {
-            //DO SOMETHING
+            audioSrc.volume = 0.45f;
+            audioSrc.clip = wrongSFX;
+            audioSrc.Play();
+            audioSrc.volume = 0.7f;
             Debug.Log("WRONG SIZE");
         }
         else
@@ -51,6 +65,8 @@ public class GiftWrapping : MonoBehaviour
         {
             holdingTape = true;
             Instantiate(tapePrefab, Camera.main.ScreenToWorldPoint(Input.mousePosition), Quaternion.identity);
+            audioSrc.clip = tapeSFX[Random.Range(0, tapeSFX.Length)];
+            audioSrc.Play();
         }
     }
 
@@ -66,9 +82,16 @@ public class GiftWrapping : MonoBehaviour
                 gameManager.addedBox.GetComponent<SpriteRenderer>().sprite = matchingWrappedBoxSprite;
                 gameManager.addedBox.layer = LayerMask.NameToLayer("WrappedBox");
                 gameManager.wrappedBox = true;
+
+                audioSrc.clip = wrappedBoxSFX;
+                audioSrc.Play();
             }
             else
             {
+                audioSrc.volume = 0.45f;
+                audioSrc.clip = wrongSFX;
+                audioSrc.Play();
+                audioSrc.volume = 0.7f;
                 Debug.Log("Wrong wrapping paper!");
             }
         }
@@ -114,12 +137,21 @@ public class GiftWrapping : MonoBehaviour
             {
                 if (tapeInstance != null && tapeInstance.GetComponent<TapeController>().placed)
                 {
+                    audioSrc.clip = stickerSFX;
+                    audioSrc.volume = 1f;
+                    audioSrc.Play();
+                    audioSrc.volume = 0.7f;
+
                     holdingSticker = true;
                     Instantiate(stickerPrefab, Camera.main.ScreenToWorldPoint(Input.mousePosition), Quaternion.identity);
                 }
             }
             else
             {
+                audioSrc.volume = 0.45f;
+                audioSrc.clip = wrongSFX;
+                audioSrc.Play();
+                audioSrc.volume = 0.7f;
                 Debug.Log("Wrong sticker!");
             }
         }

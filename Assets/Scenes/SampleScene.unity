@@ -320,6 +320,12 @@ MonoBehaviour:
   holdingSticker: 0
   stickerPrefab: {fileID: 0}
   tapeButtonController: {fileID: 1292294760}
+  audioSrc: {fileID: 1801407972}
+  boxSFX: {fileID: 0}
+  tapeSFX: []
+  wrappedBoxSFX: {fileID: 8300000, guid: d898b66ce8c15cf43b91e3ac5ca4c56e, type: 3}
+  stickerSFX: {fileID: 0}
+  wrongSFX: {fileID: 8300000, guid: 5cbe673cc2cd56c4ba545fc1cb411b91, type: 3}
 --- !u!1 &296775582
 GameObject:
   m_ObjectHideFlags: 0
@@ -601,6 +607,12 @@ MonoBehaviour:
   holdingSticker: 0
   stickerPrefab: {fileID: 0}
   tapeButtonController: {fileID: 1292294760}
+  audioSrc: {fileID: 1801407972}
+  boxSFX: {fileID: 0}
+  tapeSFX: []
+  wrappedBoxSFX: {fileID: 8300000, guid: d898b66ce8c15cf43b91e3ac5ca4c56e, type: 3}
+  stickerSFX: {fileID: 0}
+  wrongSFX: {fileID: 8300000, guid: 5cbe673cc2cd56c4ba545fc1cb411b91, type: 3}
 --- !u!1 &334487280
 GameObject:
   m_ObjectHideFlags: 0
@@ -660,6 +672,12 @@ MonoBehaviour:
   holdingSticker: 0
   stickerPrefab: {fileID: 4667747347814535985, guid: dee2c5b39cc86ec4793006eb022d8270, type: 3}
   tapeButtonController: {fileID: 1292294760}
+  audioSrc: {fileID: 1801407972}
+  boxSFX: {fileID: 0}
+  tapeSFX: []
+  wrappedBoxSFX: {fileID: 0}
+  stickerSFX: {fileID: 8300000, guid: 33724874a520c9c43af90925a0d0abd1, type: 3}
+  wrongSFX: {fileID: 8300000, guid: 5cbe673cc2cd56c4ba545fc1cb411b91, type: 3}
 --- !u!114 &334487283
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -764,6 +782,7 @@ GameObject:
   m_Component:
   - component: {fileID: 441233128}
   - component: {fileID: 441233127}
+  - component: {fileID: 441233129}
   m_Layer: 0
   m_Name: thinking bubble
   m_TagString: Untagged
@@ -838,6 +857,27 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &441233129
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 441233126}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c8bb204e608af9c40b95307e90074ed4, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -1096,6 +1136,12 @@ MonoBehaviour:
   holdingSticker: 0
   stickerPrefab: {fileID: 0}
   tapeButtonController: {fileID: 1292294760}
+  audioSrc: {fileID: 1801407972}
+  boxSFX: {fileID: 0}
+  tapeSFX: []
+  wrappedBoxSFX: {fileID: 8300000, guid: d898b66ce8c15cf43b91e3ac5ca4c56e, type: 3}
+  stickerSFX: {fileID: 0}
+  wrongSFX: {fileID: 8300000, guid: 5cbe673cc2cd56c4ba545fc1cb411b91, type: 3}
 --- !u!1 &571552801
 GameObject:
   m_ObjectHideFlags: 0
@@ -1107,6 +1153,7 @@ GameObject:
   - component: {fileID: 571552802}
   - component: {fileID: 571552804}
   - component: {fileID: 571552803}
+  - component: {fileID: 571552805}
   m_Layer: 5
   m_Name: stickerImg
   m_TagString: Untagged
@@ -1171,6 +1218,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 571552801}
   m_CullTransparentMesh: 1
+--- !u!95 &571552805
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 571552801}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c8bb204e608af9c40b95307e90074ed4, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &573445752
 GameObject:
   m_ObjectHideFlags: 0
@@ -1588,6 +1656,12 @@ MonoBehaviour:
   holdingSticker: 0
   stickerPrefab: {fileID: 0}
   tapeButtonController: {fileID: 1292294760}
+  audioSrc: {fileID: 1801407972}
+  boxSFX: {fileID: 0}
+  tapeSFX: []
+  wrappedBoxSFX: {fileID: 8300000, guid: d898b66ce8c15cf43b91e3ac5ca4c56e, type: 3}
+  stickerSFX: {fileID: 0}
+  wrongSFX: {fileID: 8300000, guid: 5cbe673cc2cd56c4ba545fc1cb411b91, type: 3}
 --- !u!1 &736928478
 GameObject:
   m_ObjectHideFlags: 0
@@ -1724,6 +1798,152 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 736928478}
   m_CullTransparentMesh: 1
+--- !u!1 &773238879
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 773238882}
+  - component: {fileID: 773238881}
+  - component: {fileID: 773238880}
+  m_Layer: 0
+  m_Name: BackgroundMusic
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &773238880
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 773238879}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47d7af5bdc30c7f43a4273facace26ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioSource: {fileID: 773238881}
+  songs:
+  - {fileID: 8300000, guid: 4d4a3670ba7fe544bae6b3ce37ceb67e, type: 3}
+  - {fileID: 8300000, guid: 2160fda543ddf584d87f2257c6d5a627, type: 3}
+  - {fileID: 8300000, guid: 108c8d676af6c4a45849f942381964e9, type: 3}
+--- !u!82 &773238881
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 773238879}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 0.35
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!4 &773238882
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 773238879}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &788651528
 GameObject:
   m_ObjectHideFlags: 0
@@ -2137,6 +2357,12 @@ MonoBehaviour:
   holdingSticker: 0
   stickerPrefab: {fileID: 6406705166982734733, guid: 16238f61df0b76a41acbbe1a99401ea9, type: 3}
   tapeButtonController: {fileID: 1292294760}
+  audioSrc: {fileID: 1801407972}
+  boxSFX: {fileID: 0}
+  tapeSFX: []
+  wrappedBoxSFX: {fileID: 0}
+  stickerSFX: {fileID: 8300000, guid: 33724874a520c9c43af90925a0d0abd1, type: 3}
+  wrongSFX: {fileID: 8300000, guid: 5cbe673cc2cd56c4ba545fc1cb411b91, type: 3}
 --- !u!114 &874298052
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2530,6 +2756,12 @@ MonoBehaviour:
   holdingSticker: 0
   stickerPrefab: {fileID: 0}
   tapeButtonController: {fileID: 1292294760}
+  audioSrc: {fileID: 1801407972}
+  boxSFX: {fileID: 0}
+  tapeSFX: []
+  wrappedBoxSFX: {fileID: 8300000, guid: d898b66ce8c15cf43b91e3ac5ca4c56e, type: 3}
+  stickerSFX: {fileID: 0}
+  wrongSFX: {fileID: 8300000, guid: 5cbe673cc2cd56c4ba545fc1cb411b91, type: 3}
 --- !u!1 &1098120457
 GameObject:
   m_ObjectHideFlags: 0
@@ -2683,6 +2915,12 @@ MonoBehaviour:
   holdingSticker: 0
   stickerPrefab: {fileID: 0}
   tapeButtonController: {fileID: 0}
+  audioSrc: {fileID: 1801407972}
+  boxSFX: {fileID: 8300000, guid: dcca7067e42a517449d0ba2a955b12b4, type: 3}
+  tapeSFX: []
+  wrappedBoxSFX: {fileID: 0}
+  stickerSFX: {fileID: 0}
+  wrongSFX: {fileID: 8300000, guid: 5cbe673cc2cd56c4ba545fc1cb411b91, type: 3}
 --- !u!1 &1242048574
 GameObject:
   m_ObjectHideFlags: 0
@@ -2982,6 +3220,14 @@ MonoBehaviour:
   holdingSticker: 0
   stickerPrefab: {fileID: 0}
   tapeButtonController: {fileID: 0}
+  audioSrc: {fileID: 1801407972}
+  boxSFX: {fileID: 0}
+  tapeSFX:
+  - {fileID: 8300000, guid: cab34ac05fe78fe44a0387254fead1d8, type: 3}
+  - {fileID: 8300000, guid: 125ba4af811b63d448fa6245fc39bd7b, type: 3}
+  wrappedBoxSFX: {fileID: 0}
+  stickerSFX: {fileID: 0}
+  wrongSFX: {fileID: 8300000, guid: 5cbe673cc2cd56c4ba545fc1cb411b91, type: 3}
 --- !u!1 &1325952146
 GameObject:
   m_ObjectHideFlags: 0
@@ -3269,6 +3515,12 @@ MonoBehaviour:
   holdingSticker: 0
   stickerPrefab: {fileID: 0}
   tapeButtonController: {fileID: 0}
+  audioSrc: {fileID: 1801407972}
+  boxSFX: {fileID: 8300000, guid: dcca7067e42a517449d0ba2a955b12b4, type: 3}
+  tapeSFX: []
+  wrappedBoxSFX: {fileID: 0}
+  stickerSFX: {fileID: 0}
+  wrongSFX: {fileID: 8300000, guid: 5cbe673cc2cd56c4ba545fc1cb411b91, type: 3}
 --- !u!1 &1390385480
 GameObject:
   m_ObjectHideFlags: 0
@@ -3284,7 +3536,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1390385481
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3368,6 +3620,12 @@ MonoBehaviour:
   holdingSticker: 0
   stickerPrefab: {fileID: 8809443157899209487, guid: e74898c8d64ecbc4aa4d9a2cd3f2bcae, type: 3}
   tapeButtonController: {fileID: 1292294760}
+  audioSrc: {fileID: 1801407972}
+  boxSFX: {fileID: 0}
+  tapeSFX: []
+  wrappedBoxSFX: {fileID: 0}
+  stickerSFX: {fileID: 8300000, guid: 33724874a520c9c43af90925a0d0abd1, type: 3}
+  wrongSFX: {fileID: 8300000, guid: 5cbe673cc2cd56c4ba545fc1cb411b91, type: 3}
 --- !u!114 &1699208204
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3473,6 +3731,7 @@ GameObject:
   - component: {fileID: 1801407969}
   - component: {fileID: 1801407970}
   - component: {fileID: 1801407971}
+  - component: {fileID: 1801407972}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -3530,8 +3789,13 @@ MonoBehaviour:
   closedBox: 0
   addedSticker: 0
   tapeController: {fileID: 1292294760}
+  thinkingBubbleAnim: {fileID: 441233129}
   gameOverScreen: {fileID: 1390385480}
   wavesSurvivedText: {fileID: 815445248}
+  audioSource: {fileID: 1801407972}
+  closeBoxSFX: {fileID: 8300000, guid: 9a7e484cde4a0aa449ad5f67d028c38a, type: 3}
+  nextCustomerSFX: {fileID: 8300000, guid: ba0c90cdeb0d45e4c90acdbde2f50d14, type: 3}
+  gameOverSFX: {fileID: 8300000, guid: aa858b9afc608194c85666a1591fdada, type: 3}
 --- !u!114 &1801407971
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3544,6 +3808,102 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e54400d7b85d7dd40b29ca2f168da889, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!82 &1801407972
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1801407968}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 0.7
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1963673150
 GameObject:
   m_ObjectHideFlags: 0
@@ -3555,6 +3915,7 @@ GameObject:
   - component: {fileID: 1963673151}
   - component: {fileID: 1963673153}
   - component: {fileID: 1963673152}
+  - component: {fileID: 1963673154}
   m_Layer: 5
   m_Name: wrappingPaperImg
   m_TagString: Untagged
@@ -3619,6 +3980,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1963673150}
   m_CullTransparentMesh: 1
+--- !u!95 &1963673154
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1963673150}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c8bb204e608af9c40b95307e90074ed4, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1972977034
 GameObject:
   m_ObjectHideFlags: 0
@@ -3946,6 +4328,12 @@ MonoBehaviour:
   holdingSticker: 0
   stickerPrefab: {fileID: 0}
   tapeButtonController: {fileID: 0}
+  audioSrc: {fileID: 1801407972}
+  boxSFX: {fileID: 8300000, guid: dcca7067e42a517449d0ba2a955b12b4, type: 3}
+  tapeSFX: []
+  wrappedBoxSFX: {fileID: 0}
+  stickerSFX: {fileID: 0}
+  wrongSFX: {fileID: 8300000, guid: 5cbe673cc2cd56c4ba545fc1cb411b91, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -3960,3 +4348,4 @@ SceneRoots:
   - {fileID: 1972977035}
   - {fileID: 46440988}
   - {fileID: 296775583}
+  - {fileID: 773238882}

@@ -100,6 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   placed: 0
+  stickerSFX: {fileID: 8300000, guid: 8e24b3841ccd55a40b607f9843a7fd00, type: 3}
 --- !u!95 &-5779692917848635118
 Animator:
   serializedVersion: 5

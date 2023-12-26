@@ -29,13 +29,21 @@ public class GameManager : MonoBehaviour
     private float timeRemaining;
     public bool addedCorrectBox = false;
     public GameObject addedBox;
+    private bool timerRunning = true;
+    private bool countdownRunning = false;
     [HideInInspector] public bool wrappedBox = false;
     [HideInInspector] public bool closedBox = false;
     [HideInInspector] public bool addedSticker = false;
     [SerializeField] private GiftWrapping tapeController;
+    [SerializeField] private Animator thinkingBubbleAnim;
     [Header("UI")]
     [SerializeField] private GameObject gameOverScreen;
-    [SerializeField] private TMPro.TMP_Text wavesSurvivedText;
+    [SerializeField] private TMP_Text wavesSurvivedText;
+    [Header("SFX")]
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioClip closeBoxSFX;
+    [SerializeField] private AudioClip nextCustomerSFX;
+    [SerializeField] private AudioClip gameOverSFX;
 
     void Start()
     {
@@ -45,6 +53,7 @@ public class GameManager : MonoBehaviour
         stickerImg.sprite = null;
 
         timeRemaining = 35f;
+        timerRunning = true;
         numCustomers = 3;
         StartNewWave();
     }
@@ -56,11 +65,17 @@ public class GameManager : MonoBehaviour
             //timer
             if (timeRemaining > 0f)
             {
-                timeRemaining -= Time.deltaTime;
-                UpdateTimer(timeRemaining);
+                if (timerRunning)
+                {
+                    timeRemaining -= Time.deltaTime;
+                    UpdateTimer(timeRemaining);
+                }
             }
             else
             {
+                audioSource.clip = gameOverSFX;
+                audioSource.Play();
+                
                 gameOver = true;
                 Debug.Log("GAME OVER");
                 gameOverScreen.SetActive(true);
@@ -69,7 +84,7 @@ public class GameManager : MonoBehaviour
             }
 
             //handle customers
-            if (!handlingCustomer)
+            if (!handlingCustomer && customers.Count > 0)
             {
                 //setup customer handling
                 handlingCustomer = true;
@@ -96,12 +111,19 @@ public class GameManager : MonoBehaviour
                         {
                             addedBox.GetComponent<SpriteRenderer>().sprite = closedBoxSprite;
                             closedBox = true;
+                            audioSource.clip = closeBoxSFX;
+                            audioSource.Play();
                         }
                     }
                 }
 
                 if (FinalizedWrapping())
                 {
+                    audioSource.volume = 0.25f;
+                    audioSource.clip = nextCustomerSFX;
+                    audioSource.Play();
+                    audioSource.volume = 0.7f;
+
                     Debug.Log("NEXT CUSTOMER!");
 
                     //animate customer leaving
@@ -125,9 +147,32 @@ public class GameManager : MonoBehaviour
                 numCustomers = Random.Range(2, 13);
                 timeRemaining = Random.Range(30f, 120f); //reset timer
                 StartNewWave();
+                ////start cooldown between waves
+                //if (!countdownRunning)
+                //{
+                //    StartCoroutine(Cooldown());
+                //}
             }
         }
     }
+
+    //IEnumerator Cooldown()
+    //{
+    //    countdownRunning = true;
+    //    timerRunning = false;
+        
+    //    Debug.Log("Starting cooldown...");
+
+    //    stickerImg.GetComponent<Animator>().Play("NoDestroyFadeOut");
+    //    wrappingPaperImg.GetComponent<Animator>().Play("NoDestroyFadeOut");
+    //    thinkingBubbleAnim.Play("NoDestroyFadeOut");
+     
+    //    yield return new WaitForSeconds(Random.Range(3f, 12f));
+        
+    //    numCustomers = Random.Range(2, 13);
+    //    timeRemaining = Random.Range(30f, 120f); //reset timer
+    //    StartNewWave();
+    //}
 
     void ResetBools()
     {
@@ -143,19 +188,19 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    IEnumerator ShiftLine(GameObject customer, float speed)
-    {
-        Vector3 targetPos = customer.transform.position + new Vector3(1.825f, 0f, 0f);
-        float time = 0f;
-        while (time < 1.2f)
-        {
-            time += Time.deltaTime;
+    //IEnumerator ShiftLine(GameObject customer, float speed)
+    //{
+    //    Vector3 targetPos = customer.transform.position + new Vector3(1.825f, 0f, 0f);
+    //    float time = 0f;
+    //    while (time < 1.2f)
+    //    {
+    //        time += Time.deltaTime;
 
-            customer.transform.position = Vector3.Lerp(customer.transform.position, targetPos, speed * Time.deltaTime);
-            yield return null;
-        }
-        yield return new WaitForSeconds(0.1f);
-    }
+    //        customer.transform.position = Vector3.Lerp(customer.transform.position, targetPos, speed * Time.deltaTime);
+    //        yield return null;
+    //    }
+    //    yield return new WaitForSeconds(0.1f);
+    //}
 
     void AnimateFadeOutObjects()
     {
@@ -202,9 +247,13 @@ public class GameManager : MonoBehaviour
 
     void StartNewWave()
     {
+        stickerImg.GetComponent<Animator>().Play("FadeIn");
+        wrappingPaperImg.GetComponent<Animator>().Play("FadeIn");
+        thinkingBubbleAnim.Play("FadeIn");
+
         wave++;
         Debug.Log($"Starting wave {wave}!");
-      
+
         for (int i = 0; i < numCustomers; i++)
         {
             GameObject customer = Instantiate(customerPrefab, customerLine.transform);
@@ -214,6 +263,8 @@ public class GameManager : MonoBehaviour
 
             customers.Enqueue(customer.GetComponent<Customer>());
         }
+
+        timerRunning = true;
     }
 
     void DisplayRequirements(Customer currentCustomer)

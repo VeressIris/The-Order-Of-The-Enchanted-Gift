@@ -5,6 +5,13 @@ using UnityEngine;
 public class StickerController : MonoBehaviour
 {
     [HideInInspector] public bool placed = false;
+    private AudioSource audioSrc;
+    [SerializeField] private AudioClip stickerSFX;
+
+    private void Start()
+    {
+        audioSrc = GameObject.Find("GameManager").GetComponent<AudioSource>();
+    }
 
     void Update()
     {
@@ -15,6 +22,10 @@ public class StickerController : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0) && BoxClicked())
         {
+            audioSrc.volume = 1f;
+            audioSrc.clip = stickerSFX;
+            audioSrc.Play();
+            audioSrc.volume = 0.7f;
             Debug.Log("Sticker placed");
             placed = true;
         }

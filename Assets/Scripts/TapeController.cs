@@ -5,6 +5,13 @@ using UnityEngine;
 public class TapeController : MonoBehaviour
 {
     [HideInInspector] public bool placed = false;
+    private AudioSource audioSrc;
+    [SerializeField] private AudioClip tapeSFX;
+
+    private void Start()
+    {
+        audioSrc = GameObject.Find("GameManager").GetComponent<AudioSource>();
+    }
 
     void Update()
     {
@@ -15,6 +22,10 @@ public class TapeController : MonoBehaviour
         
         if (Input.GetMouseButtonDown(0) && BoxClicked())
         {
+            audioSrc.clip = tapeSFX;
+            audioSrc.volume = 1f;
+            audioSrc.Play();
+            audioSrc.volume = 0.7f;
             Debug.Log("Tape placed");
             placed = true;
         }
