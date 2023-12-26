@@ -10,7 +10,10 @@ public class GiftWrapping : MonoBehaviour
     [SerializeField] private GameObject boxPrefab;
     [SerializeField] private GameObject tapePrefab;
     [SerializeField] private Sprite matchingWrappedBoxSprite;
-    bool holdingTape = false;
+    [HideInInspector] public bool holdingTape = false;
+    bool holdingSticker = false;
+    [SerializeField] private GameObject stickerPrefab;
+    [SerializeField] private GiftWrapping tapeButtonController;
 
     public void AddBox()
     {
@@ -41,7 +44,7 @@ public class GiftWrapping : MonoBehaviour
 
     public void AddDuctTape()
     {
-        if (!holdingTape)
+        if (!holdingTape && (gameManager.closedBox || gameManager.wrappedBox))
         {
             holdingTape = true;
             Instantiate(tapePrefab, Camera.main.ScreenToWorldPoint(Input.mousePosition), Quaternion.identity);
@@ -53,7 +56,11 @@ public class GiftWrapping : MonoBehaviour
         if (gameManager.addedCorrectBox)
         {
             Destroy(GameObject.FindGameObjectWithTag("Tape"));
+            tapeButtonController.holdingTape = false;
+
             gameManager.addedBox.GetComponent<SpriteRenderer>().sprite = matchingWrappedBoxSprite;
+            gameManager.addedBox.layer = LayerMask.NameToLayer("WrappedBox");
+            gameManager.wrappedBox = true;
         }
     }
 
@@ -84,6 +91,19 @@ public class GiftWrapping : MonoBehaviour
 
             yield return new WaitForSeconds(duration);
             Destroy(gameManager.objectToWrap);
+        }
+    }
+
+    public void AddSticker()
+    {
+        GameObject tapeInstance = GameObject.FindGameObjectWithTag("Tape");
+        if (!holdingSticker && gameManager.wrappedBox)
+        {
+            if (tapeInstance != null && tapeInstance.GetComponent<TapeController>().placed)
+            {
+                holdingSticker = true;
+                Instantiate(stickerPrefab, Camera.main.ScreenToWorldPoint(Input.mousePosition), Quaternion.identity);
+            }
         }
     }
 }

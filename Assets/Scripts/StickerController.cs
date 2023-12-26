@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TapeController : MonoBehaviour
+public class StickerController : MonoBehaviour
 {
-    [HideInInspector] public bool placed = false;
+    private bool placed = false;
 
     void Update()
     {
@@ -12,10 +12,10 @@ public class TapeController : MonoBehaviour
         {
             FollowMouse();
         }
-        
+
         if (Input.GetMouseButtonDown(0) && BoxClicked())
         {
-            Debug.Log("Tape placed");
+            Debug.Log("Sticker placed");
             placed = true;
         }
     }
@@ -31,9 +31,7 @@ public class TapeController : MonoBehaviour
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit2D hit = Physics2D.Raycast(ray.origin, ray.direction);
 
-        if (hit.collider != null && 
-            (hit.collider.gameObject.layer == LayerMask.NameToLayer("ClosedBox") || 
-            hit.collider.gameObject.layer == LayerMask.NameToLayer("WrappedBox")))
+        if (hit.collider != null && hit.collider.gameObject.layer == LayerMask.NameToLayer("WrappedBox"))
         {
             return true;
         }

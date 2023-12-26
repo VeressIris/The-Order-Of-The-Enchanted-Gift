@@ -316,6 +316,9 @@ MonoBehaviour:
   boxPrefab: {fileID: 994110748651046194, guid: be4ba575816e21642890415f919cca53, type: 3}
   tapePrefab: {fileID: 3922129754420681519, guid: 90d4e65c9cd436248a6b39593dc941b7, type: 3}
   matchingWrappedBoxSprite: {fileID: 21300000, guid: fa5c12a8ed4e97c41a6956db5ed525c8, type: 3}
+  holdingTape: 0
+  stickerPrefab: {fileID: 0}
+  tapeButtonController: {fileID: 1292294760}
 --- !u!1 &302071970
 GameObject:
   m_ObjectHideFlags: 0
@@ -562,6 +565,161 @@ MonoBehaviour:
   boxPrefab: {fileID: 994110748651046194, guid: be4ba575816e21642890415f919cca53, type: 3}
   tapePrefab: {fileID: 3922129754420681519, guid: 90d4e65c9cd436248a6b39593dc941b7, type: 3}
   matchingWrappedBoxSprite: {fileID: 21300000, guid: 0e3e8de3a2786b845b2b825f9619851c, type: 3}
+  holdingTape: 0
+  stickerPrefab: {fileID: 0}
+  tapeButtonController: {fileID: 1292294760}
+--- !u!1 &334487280
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 334487281}
+  - component: {fileID: 334487285}
+  - component: {fileID: 334487284}
+  - component: {fileID: 334487283}
+  - component: {fileID: 334487282}
+  m_Layer: 5
+  m_Name: crinStickerButton
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &334487281
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 334487280}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.33914888, y: 0.22823039, z: 0.33914888}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 647542262}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -572.5, y: -568}
+  m_SizeDelta: {x: 329.5808, y: 329.58}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &334487282
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 334487280}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da32daed4daea4b40bd14f44046cf752, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameManager: {fileID: 1801407970}
+  boxPrefab: {fileID: 994110748651046194, guid: be4ba575816e21642890415f919cca53, type: 3}
+  tapePrefab: {fileID: 3922129754420681519, guid: 90d4e65c9cd436248a6b39593dc941b7, type: 3}
+  matchingWrappedBoxSprite: {fileID: 21300000, guid: 1837379914969f54c8dbaae24a23eb1a, type: 3}
+  holdingTape: 0
+  stickerPrefab: {fileID: 4667747347814535985, guid: dee2c5b39cc86ec4793006eb022d8270, type: 3}
+  tapeButtonController: {fileID: 1292294760}
+--- !u!114 &334487283
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 334487280}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9150943, g: 0.9150943, b: 0.9150943, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 334487284}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 334487282}
+        m_TargetAssemblyTypeName: GiftWrapping, Assembly-CSharp
+        m_MethodName: AddSticker
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &334487284
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 334487280}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 25.42, y: 31.85, z: 23.99, w: 33.14}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: d96b2584e2b0767448d838a5c5109f03, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &334487285
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 334487280}
+  m_CullTransparentMesh: 1
 --- !u!1 &441233126
 GameObject:
   m_ObjectHideFlags: 0
@@ -900,6 +1058,9 @@ MonoBehaviour:
   boxPrefab: {fileID: 994110748651046194, guid: be4ba575816e21642890415f919cca53, type: 3}
   tapePrefab: {fileID: 3922129754420681519, guid: 90d4e65c9cd436248a6b39593dc941b7, type: 3}
   matchingWrappedBoxSprite: {fileID: 21300000, guid: 1837379914969f54c8dbaae24a23eb1a, type: 3}
+  holdingTape: 0
+  stickerPrefab: {fileID: 0}
+  tapeButtonController: {fileID: 1292294760}
 --- !u!1 &571552801
 GameObject:
   m_ObjectHideFlags: 0
@@ -1078,6 +1239,9 @@ RectTransform:
   - {fileID: 1039884066}
   - {fileID: 202034786}
   - {fileID: 563443327}
+  - {fileID: 1699208201}
+  - {fileID: 334487281}
+  - {fileID: 874298050}
   - {fileID: 1292294755}
   - {fileID: 1963673151}
   - {fileID: 571552802}
@@ -1250,6 +1414,9 @@ MonoBehaviour:
   boxPrefab: {fileID: 994110748651046194, guid: be4ba575816e21642890415f919cca53, type: 3}
   tapePrefab: {fileID: 3922129754420681519, guid: 90d4e65c9cd436248a6b39593dc941b7, type: 3}
   matchingWrappedBoxSprite: {fileID: 21300000, guid: b35162b25b110ae41a019b526711c680, type: 3}
+  holdingTape: 0
+  stickerPrefab: {fileID: 0}
+  tapeButtonController: {fileID: 1292294760}
 --- !u!1 &736928478
 GameObject:
   m_ObjectHideFlags: 0
@@ -1470,6 +1637,158 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &874298049
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 874298050}
+  - component: {fileID: 874298054}
+  - component: {fileID: 874298053}
+  - component: {fileID: 874298052}
+  - component: {fileID: 874298051}
+  m_Layer: 5
+  m_Name: giftStickerButton
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &874298050
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 874298049}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.33914888, y: 0.24820054, z: 0.33914888}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 647542262}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -440.2, y: -528.9}
+  m_SizeDelta: {x: 329.5808, y: 329.58}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &874298051
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 874298049}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da32daed4daea4b40bd14f44046cf752, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameManager: {fileID: 1801407970}
+  boxPrefab: {fileID: 994110748651046194, guid: be4ba575816e21642890415f919cca53, type: 3}
+  tapePrefab: {fileID: 3922129754420681519, guid: 90d4e65c9cd436248a6b39593dc941b7, type: 3}
+  matchingWrappedBoxSprite: {fileID: 21300000, guid: 1837379914969f54c8dbaae24a23eb1a, type: 3}
+  holdingTape: 0
+  stickerPrefab: {fileID: 6406705166982734733, guid: 16238f61df0b76a41acbbe1a99401ea9, type: 3}
+  tapeButtonController: {fileID: 1292294760}
+--- !u!114 &874298052
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 874298049}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9150943, g: 0.9150943, b: 0.9150943, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 874298053}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 874298051}
+        m_TargetAssemblyTypeName: GiftWrapping, Assembly-CSharp
+        m_MethodName: AddSticker
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &874298053
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 874298049}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 25.42, y: 31.85, z: 23.99, w: 33.14}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: afc4fa9f67a5cd4498b585c0ca992c8b, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &874298054
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 874298049}
+  m_CullTransparentMesh: 1
 --- !u!1 &1039884065
 GameObject:
   m_ObjectHideFlags: 0
@@ -1632,6 +1951,9 @@ MonoBehaviour:
   boxPrefab: {fileID: 994110748651046194, guid: be4ba575816e21642890415f919cca53, type: 3}
   tapePrefab: {fileID: 3922129754420681519, guid: 90d4e65c9cd436248a6b39593dc941b7, type: 3}
   matchingWrappedBoxSprite: {fileID: 21300000, guid: 551678a88ace0d445b531f741ef0a4ed, type: 3}
+  holdingTape: 0
+  stickerPrefab: {fileID: 0}
+  tapeButtonController: {fileID: 1292294760}
 --- !u!1 &1098120457
 GameObject:
   m_ObjectHideFlags: 0
@@ -1781,6 +2103,9 @@ MonoBehaviour:
   boxPrefab: {fileID: 3621256841897419549, guid: 40dd609de03220341911e361fb2d5925, type: 3}
   tapePrefab: {fileID: 0}
   matchingWrappedBoxSprite: {fileID: 0}
+  holdingTape: 0
+  stickerPrefab: {fileID: 0}
+  tapeButtonController: {fileID: 0}
 --- !u!1 &1292294754
 GameObject:
   m_ObjectHideFlags: 0
@@ -1943,6 +2268,9 @@ MonoBehaviour:
   boxPrefab: {fileID: 2470626647917036666, guid: 0ea40008a62152a4584668b032c78cd2, type: 3}
   tapePrefab: {fileID: 3922129754420681519, guid: 90d4e65c9cd436248a6b39593dc941b7, type: 3}
   matchingWrappedBoxSprite: {fileID: 0}
+  holdingTape: 0
+  stickerPrefab: {fileID: 0}
+  tapeButtonController: {fileID: 0}
 --- !u!1 &1377138430
 GameObject:
   m_ObjectHideFlags: 0
@@ -2092,6 +2420,161 @@ MonoBehaviour:
   boxPrefab: {fileID: 994110748651046194, guid: be4ba575816e21642890415f919cca53, type: 3}
   tapePrefab: {fileID: 0}
   matchingWrappedBoxSprite: {fileID: 0}
+  holdingTape: 0
+  stickerPrefab: {fileID: 0}
+  tapeButtonController: {fileID: 0}
+--- !u!1 &1699208200
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1699208201}
+  - component: {fileID: 1699208206}
+  - component: {fileID: 1699208205}
+  - component: {fileID: 1699208204}
+  - component: {fileID: 1699208203}
+  m_Layer: 5
+  m_Name: treeStickerButton
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1699208201
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1699208200}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.33914888, y: 0.25011548, z: 0.33914888}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 647542262}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -548.9, y: -457.9}
+  m_SizeDelta: {x: 329.5808, y: 329.58}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1699208203
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1699208200}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da32daed4daea4b40bd14f44046cf752, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameManager: {fileID: 1801407970}
+  boxPrefab: {fileID: 994110748651046194, guid: be4ba575816e21642890415f919cca53, type: 3}
+  tapePrefab: {fileID: 3922129754420681519, guid: 90d4e65c9cd436248a6b39593dc941b7, type: 3}
+  matchingWrappedBoxSprite: {fileID: 21300000, guid: 1837379914969f54c8dbaae24a23eb1a, type: 3}
+  holdingTape: 0
+  stickerPrefab: {fileID: 8809443157899209487, guid: e74898c8d64ecbc4aa4d9a2cd3f2bcae, type: 3}
+  tapeButtonController: {fileID: 1292294760}
+--- !u!114 &1699208204
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1699208200}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9150943, g: 0.9150943, b: 0.9150943, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 1699208205}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1699208203}
+        m_TargetAssemblyTypeName: GiftWrapping, Assembly-CSharp
+        m_MethodName: AddSticker
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1699208205
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1699208200}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 25.42, y: 31.85, z: 23.99, w: 33.14}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 0126df8579f4ff64d873ab1561d738d3, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1699208206
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1699208200}
+  m_CullTransparentMesh: 1
 --- !u!1 &1801407968
 GameObject:
   m_ObjectHideFlags: 0
@@ -2155,6 +2638,8 @@ MonoBehaviour:
   timerAndWaveText: {fileID: 736928480}
   addedCorrectBox: 0
   addedBox: {fileID: 0}
+  wrappedBox: 0
+  closedBox: 0
 --- !u!95 &1801407971
 Animator:
   serializedVersion: 5
@@ -2499,6 +2984,9 @@ MonoBehaviour:
   boxPrefab: {fileID: 2470626647917036666, guid: 0ea40008a62152a4584668b032c78cd2, type: 3}
   tapePrefab: {fileID: 3922129754420681519, guid: 90d4e65c9cd436248a6b39593dc941b7, type: 3}
   matchingWrappedBoxSprite: {fileID: 0}
+  holdingTape: 0
+  stickerPrefab: {fileID: 0}
+  tapeButtonController: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

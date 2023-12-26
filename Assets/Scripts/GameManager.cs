@@ -28,6 +28,8 @@ public class GameManager : MonoBehaviour
     private float timeRemaining;
     public bool addedCorrectBox = false;
     public GameObject addedBox;
+    public bool wrappedBox = false;
+    public bool closedBox = false;
 
     void Start()
     {
@@ -75,6 +77,7 @@ public class GameManager : MonoBehaviour
                         if (BoxClicked())
                         {
                             addedBox.GetComponent<SpriteRenderer>().sprite = closedBoxSprite;
+                            closedBox = true;
                         }
                     }
                 }
