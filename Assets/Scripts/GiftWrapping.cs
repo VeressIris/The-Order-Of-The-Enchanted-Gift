@@ -17,6 +17,9 @@ public class GiftWrapping : MonoBehaviour
 
     public void AddBox()
     {
+        if (gameManager.addedCorrectBox) 
+            return;
+
         StartCoroutine(RaiseObject(0.46f));
 
         if (gameManager.addedBox == null)
@@ -28,8 +31,8 @@ public class GiftWrapping : MonoBehaviour
             //replace old box with new box
             Destroy(gameManager.addedBox);
             gameManager.addedBox = Instantiate(boxPrefab, gameManager.objectPosition.position, Quaternion.identity);
+            
         }
-
         if (gameManager.addedBox.tag != gameManager.objectToWrap.tag)
         {
             //DO SOMETHING
