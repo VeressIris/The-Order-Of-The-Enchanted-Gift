@@ -10,6 +10,7 @@ public class GiftWrapping : MonoBehaviour
     [SerializeField] private GameObject boxPrefab;
     [SerializeField] private GameObject tapePrefab;
     [SerializeField] private Sprite matchingWrappedBoxSprite;
+    bool holdingTape = false;
 
     public void AddBox()
     {
@@ -40,13 +41,18 @@ public class GiftWrapping : MonoBehaviour
 
     public void AddDuctTape()
     {
-        Instantiate(tapePrefab, Camera.main.ScreenToWorldPoint(Input.mousePosition), Quaternion.identity);
+        if (!holdingTape)
+        {
+            holdingTape = true;
+            Instantiate(tapePrefab, Camera.main.ScreenToWorldPoint(Input.mousePosition), Quaternion.identity);
+        }
     }
 
     public void WrapBox()
     {
         if (gameManager.addedCorrectBox)
         {
+            Destroy(GameObject.FindGameObjectWithTag("Tape"));
             gameManager.addedBox.GetComponent<SpriteRenderer>().sprite = matchingWrappedBoxSprite;
         }
     }
@@ -54,7 +60,7 @@ public class GiftWrapping : MonoBehaviour
     private IEnumerator Move(Vector3 targetPos, float duration, float speed)
     {
         float time = 0f;
-        while (time < 0.435f)
+        while (time < duration)
         {
             time += Time.deltaTime;
 
@@ -67,14 +73,17 @@ public class GiftWrapping : MonoBehaviour
     private IEnumerator RaiseObject(float duration)
     {
         StartCoroutine(Move(new Vector3(0,0,0), duration, 5.2f));
-        
         yield return new WaitForSeconds(duration + 0.3f);
-        StartCoroutine(Move(gameManager.objectPosition.transform.position, duration, 5.2f));
-        
-        Animator animator = gameManager.objectToWrap.GetComponent<Animator>();
-        animator.Play("FadeOut", 0);
 
-        yield return new WaitForSeconds(duration);
-        Destroy(gameManager.objectToWrap);
+        if (gameManager.addedCorrectBox)
+        {
+            StartCoroutine(Move(gameManager.objectPosition.transform.position, duration, 5.2f));
+        
+            Animator animator = gameManager.objectToWrap.GetComponent<Animator>();
+            animator.Play("FadeOut", 0);
+
+            yield return new WaitForSeconds(duration);
+            Destroy(gameManager.objectToWrap);
+        }
     }
 }
