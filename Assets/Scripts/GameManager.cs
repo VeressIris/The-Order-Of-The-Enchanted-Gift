@@ -33,9 +33,14 @@ public class GameManager : MonoBehaviour
     [HideInInspector] public bool closedBox = false;
     [HideInInspector] public bool addedSticker = false;
     [SerializeField] private GiftWrapping tapeController;
+    [Header("UI")]
+    [SerializeField] private GameObject gameOverScreen;
+    [SerializeField] private TMPro.TMP_Text wavesSurvivedText;
 
     void Start()
     {
+        gameOverScreen.SetActive(false);
+        
         wrappingPaperImg.sprite = null;
         stickerImg.sprite = null;
 
@@ -58,6 +63,9 @@ public class GameManager : MonoBehaviour
             {
                 gameOver = true;
                 Debug.Log("GAME OVER");
+                gameOverScreen.SetActive(true);
+                wavesSurvivedText.text = $"Waves survived:\n{wave}";
+                timerAndWaveText.text = "";
             }
 
             //handle customers
