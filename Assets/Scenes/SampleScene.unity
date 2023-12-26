@@ -319,6 +319,37 @@ MonoBehaviour:
   holdingTape: 0
   stickerPrefab: {fileID: 0}
   tapeButtonController: {fileID: 1292294760}
+--- !u!1 &296775582
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 296775583}
+  m_Layer: 0
+  m_Name: CustomerLine
+  m_TagString: Untagged
+  m_Icon: {fileID: -1412012063857583412, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &296775583
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 296775582}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.08, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &302071970
 GameObject:
   m_ObjectHideFlags: 0
@@ -2622,6 +2653,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   customerPrefab: {fileID: 6098457270966766729, guid: c7b9704484329364db945ac1612710b5, type: 3}
   initCustomerPos: {fileID: 46440988}
+  customerLine: {fileID: 296775582}
   giftOptions:
   - {fileID: 8882748690809470118, guid: ce42e2c882ec7c84fb5e5ffcbdcabf7f, type: 3}
   - {fileID: 1913318328932772269, guid: 11545404fe3e64d498392352c0158a47, type: 3}
@@ -2640,6 +2672,7 @@ MonoBehaviour:
   addedBox: {fileID: 0}
   wrappedBox: 0
   closedBox: 0
+  addedSticker: 0
 --- !u!95 &1801407971
 Animator:
   serializedVersion: 5
@@ -3000,3 +3033,4 @@ SceneRoots:
   - {fileID: 1801407969}
   - {fileID: 1972977035}
   - {fileID: 46440988}
+  - {fileID: 296775583}

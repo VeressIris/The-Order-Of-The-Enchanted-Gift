@@ -90,7 +90,7 @@ public class GiftWrapping : MonoBehaviour
 
     private IEnumerator RaiseObject(float duration)
     {
-        StartCoroutine(Move(new Vector3(0,0,0), duration, 5.2f));
+        StartCoroutine(Move(new Vector3(0, 0, 0), duration, 5.2f));
         yield return new WaitForSeconds(duration + 0.3f);
 
         if (gameManager.addedCorrectBox)

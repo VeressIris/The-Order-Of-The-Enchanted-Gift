@@ -9,6 +9,7 @@ TagManager:
   - Small
   - Tape
   - Sticker
+  - Customer
   layers:
   - Default
   - TransparentFX

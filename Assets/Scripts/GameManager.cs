@@ -11,9 +11,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Transform initCustomerPos;
     private int customersServed = 0;
     private Queue<Customer> customers = new Queue<Customer>();
-    private Vector3[] customersPos;
     private bool handlingCustomer = false;
     private Customer currentCustomer;
+    [SerializeField] private GameObject customerLine;
     [Header("Gifts:")]
     [SerializeField] private GameObject[] giftOptions;
     public Transform objectPosition;
@@ -64,7 +64,13 @@ public class GameManager : MonoBehaviour
                 //setup customer handling
                 handlingCustomer = true;
                 objectToWrap = Instantiate(giftOptions[Random.Range(0, giftOptions.Length)], objectPosition.position, Quaternion.identity);
+                
                 currentCustomer = customers.Peek();
+                //animate customer coming up
+                Animator currentCustomerAnim = currentCustomer.GetComponent<Animator>();
+                currentCustomerAnim.enabled = true;
+                currentCustomerAnim.Play("Pop up", 0);
+
                 DisplayRequirements(currentCustomer);
             }
             else
@@ -92,6 +98,9 @@ public class GameManager : MonoBehaviour
                     //animate box fading out
                     AnimateFadeOutObjects();
 
+                    //move customers forward
+                    StartCoroutine(ShiftLine(customerLine, 5.2f));
+
                     //reset requirement checks
                     addedCorrectBox = false;
                     wrappedBox = false; 
@@ -100,6 +109,20 @@ public class GameManager : MonoBehaviour
                 }
             }
         }
+    }
+
+    IEnumerator ShiftLine(GameObject customer, float speed)
+    {
+        Vector3 targetPos = customer.transform.position + new Vector3(1.825f, 0f, 0f);
+        float time = 0f;
+        while (time < 1.2f)
+        {
+            time += Time.deltaTime;
+
+            customer.transform.position = Vector3.Lerp(customer.transform.position, targetPos, speed * Time.deltaTime);
+            yield return null;
+        }
+        yield return new WaitForSeconds(0.1f);
     }
 
     void AnimateFadeOutObjects()
@@ -149,23 +172,15 @@ public class GameManager : MonoBehaviour
     {
         wave++;
         Debug.Log($"Starting wave {wave}!");
-        customersPos = new Vector3[numCustomers];
-
+      
         for (int i = 0; i < numCustomers; i++)
         {
-            Customer customer;
-            if (customers.Count == 0)
-            {
-                customer = Instantiate(customerPrefab, initCustomerPos.position, Quaternion.identity).GetComponent<Customer>();
-                customersPos[0] = initCustomerPos.position;
-            }
-            else
-            {
-                //instantiate customers behind each other
-                customersPos[i] = customersPos[i - 1] - new Vector3(1.825f, 0f, 0f);
-                customer = Instantiate(customerPrefab, customersPos[i], Quaternion.identity).GetComponent<Customer>(); 
-            }
-            customers.Enqueue(customer);
+            GameObject customer = Instantiate(customerPrefab, customerLine.transform);
+
+            Vector3 position = initCustomerPos.position - new Vector3(1.825f * i, 0f, 0f);
+            customer.transform.position = position;
+
+            customers.Enqueue(customer.GetComponent<Customer>());
         }
     }
 

@@ -13,5 +13,6 @@ public class Customer : MonoBehaviour
     {
         wrappingPaperImg = wrappingPaperOptions[Random.Range(0, wrappingPaperOptions.Length)];
         stickerImg = stickerOptions[Random.Range(0, stickerOptions.Length)];
+        GetComponent<Animator>().enabled = false;
     }
 }
