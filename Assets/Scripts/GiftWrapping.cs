@@ -11,7 +11,7 @@ public class GiftWrapping : MonoBehaviour
     [SerializeField] private GameObject tapePrefab;
     [SerializeField] private Sprite matchingWrappedBoxSprite;
     [HideInInspector] public bool holdingTape = false;
-    bool holdingSticker = false;
+    [HideInInspector] public bool holdingSticker = false;
     [SerializeField] private GameObject stickerPrefab;
     [SerializeField] private GiftWrapping tapeButtonController;
 

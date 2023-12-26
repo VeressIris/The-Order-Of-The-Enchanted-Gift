@@ -317,6 +317,7 @@ MonoBehaviour:
   tapePrefab: {fileID: 3922129754420681519, guid: 90d4e65c9cd436248a6b39593dc941b7, type: 3}
   matchingWrappedBoxSprite: {fileID: 21300000, guid: fa5c12a8ed4e97c41a6956db5ed525c8, type: 3}
   holdingTape: 0
+  holdingSticker: 0
   stickerPrefab: {fileID: 0}
   tapeButtonController: {fileID: 1292294760}
 --- !u!1 &296775582
@@ -597,6 +598,7 @@ MonoBehaviour:
   tapePrefab: {fileID: 3922129754420681519, guid: 90d4e65c9cd436248a6b39593dc941b7, type: 3}
   matchingWrappedBoxSprite: {fileID: 21300000, guid: 0e3e8de3a2786b845b2b825f9619851c, type: 3}
   holdingTape: 0
+  holdingSticker: 0
   stickerPrefab: {fileID: 0}
   tapeButtonController: {fileID: 1292294760}
 --- !u!1 &334487280
@@ -614,7 +616,7 @@ GameObject:
   - component: {fileID: 334487282}
   m_Layer: 5
   m_Name: crinStickerButton
-  m_TagString: Untagged
+  m_TagString: StickerButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -655,6 +657,7 @@ MonoBehaviour:
   tapePrefab: {fileID: 3922129754420681519, guid: 90d4e65c9cd436248a6b39593dc941b7, type: 3}
   matchingWrappedBoxSprite: {fileID: 21300000, guid: 1837379914969f54c8dbaae24a23eb1a, type: 3}
   holdingTape: 0
+  holdingSticker: 0
   stickerPrefab: {fileID: 4667747347814535985, guid: dee2c5b39cc86ec4793006eb022d8270, type: 3}
   tapeButtonController: {fileID: 1292294760}
 --- !u!114 &334487283
@@ -1090,6 +1093,7 @@ MonoBehaviour:
   tapePrefab: {fileID: 3922129754420681519, guid: 90d4e65c9cd436248a6b39593dc941b7, type: 3}
   matchingWrappedBoxSprite: {fileID: 21300000, guid: 1837379914969f54c8dbaae24a23eb1a, type: 3}
   holdingTape: 0
+  holdingSticker: 0
   stickerPrefab: {fileID: 0}
   tapeButtonController: {fileID: 1292294760}
 --- !u!1 &571552801
@@ -1446,6 +1450,7 @@ MonoBehaviour:
   tapePrefab: {fileID: 3922129754420681519, guid: 90d4e65c9cd436248a6b39593dc941b7, type: 3}
   matchingWrappedBoxSprite: {fileID: 21300000, guid: b35162b25b110ae41a019b526711c680, type: 3}
   holdingTape: 0
+  holdingSticker: 0
   stickerPrefab: {fileID: 0}
   tapeButtonController: {fileID: 1292294760}
 --- !u!1 &736928478
@@ -1683,7 +1688,7 @@ GameObject:
   - component: {fileID: 874298051}
   m_Layer: 5
   m_Name: giftStickerButton
-  m_TagString: Untagged
+  m_TagString: StickerButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1724,6 +1729,7 @@ MonoBehaviour:
   tapePrefab: {fileID: 3922129754420681519, guid: 90d4e65c9cd436248a6b39593dc941b7, type: 3}
   matchingWrappedBoxSprite: {fileID: 21300000, guid: 1837379914969f54c8dbaae24a23eb1a, type: 3}
   holdingTape: 0
+  holdingSticker: 0
   stickerPrefab: {fileID: 6406705166982734733, guid: 16238f61df0b76a41acbbe1a99401ea9, type: 3}
   tapeButtonController: {fileID: 1292294760}
 --- !u!114 &874298052
@@ -1983,6 +1989,7 @@ MonoBehaviour:
   tapePrefab: {fileID: 3922129754420681519, guid: 90d4e65c9cd436248a6b39593dc941b7, type: 3}
   matchingWrappedBoxSprite: {fileID: 21300000, guid: 551678a88ace0d445b531f741ef0a4ed, type: 3}
   holdingTape: 0
+  holdingSticker: 0
   stickerPrefab: {fileID: 0}
   tapeButtonController: {fileID: 1292294760}
 --- !u!1 &1098120457
@@ -2135,6 +2142,7 @@ MonoBehaviour:
   tapePrefab: {fileID: 0}
   matchingWrappedBoxSprite: {fileID: 0}
   holdingTape: 0
+  holdingSticker: 0
   stickerPrefab: {fileID: 0}
   tapeButtonController: {fileID: 0}
 --- !u!1 &1292294754
@@ -2300,6 +2308,7 @@ MonoBehaviour:
   tapePrefab: {fileID: 3922129754420681519, guid: 90d4e65c9cd436248a6b39593dc941b7, type: 3}
   matchingWrappedBoxSprite: {fileID: 0}
   holdingTape: 0
+  holdingSticker: 0
   stickerPrefab: {fileID: 0}
   tapeButtonController: {fileID: 0}
 --- !u!1 &1377138430
@@ -2452,6 +2461,7 @@ MonoBehaviour:
   tapePrefab: {fileID: 0}
   matchingWrappedBoxSprite: {fileID: 0}
   holdingTape: 0
+  holdingSticker: 0
   stickerPrefab: {fileID: 0}
   tapeButtonController: {fileID: 0}
 --- !u!1 &1699208200
@@ -2469,7 +2479,7 @@ GameObject:
   - component: {fileID: 1699208203}
   m_Layer: 5
   m_Name: treeStickerButton
-  m_TagString: Untagged
+  m_TagString: StickerButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2510,6 +2520,7 @@ MonoBehaviour:
   tapePrefab: {fileID: 3922129754420681519, guid: 90d4e65c9cd436248a6b39593dc941b7, type: 3}
   matchingWrappedBoxSprite: {fileID: 21300000, guid: 1837379914969f54c8dbaae24a23eb1a, type: 3}
   holdingTape: 0
+  holdingSticker: 0
   stickerPrefab: {fileID: 8809443157899209487, guid: e74898c8d64ecbc4aa4d9a2cd3f2bcae, type: 3}
   tapeButtonController: {fileID: 1292294760}
 --- !u!114 &1699208204
@@ -2673,6 +2684,7 @@ MonoBehaviour:
   wrappedBox: 0
   closedBox: 0
   addedSticker: 0
+  tapeController: {fileID: 0}
 --- !u!95 &1801407971
 Animator:
   serializedVersion: 5
@@ -3018,6 +3030,7 @@ MonoBehaviour:
   tapePrefab: {fileID: 3922129754420681519, guid: 90d4e65c9cd436248a6b39593dc941b7, type: 3}
   matchingWrappedBoxSprite: {fileID: 0}
   holdingTape: 0
+  holdingSticker: 0
   stickerPrefab: {fileID: 0}
   tapeButtonController: {fileID: 0}
 --- !u!1660057539 &9223372036854775807

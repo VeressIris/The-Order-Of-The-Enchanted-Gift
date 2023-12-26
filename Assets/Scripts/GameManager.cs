@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour
     private bool handlingCustomer = false;
     private Customer currentCustomer;
     [SerializeField] private GameObject customerLine;
+    private int numCustomers = 0;
     [Header("Gifts:")]
     [SerializeField] private GameObject[] giftOptions;
     public Transform objectPosition;
@@ -31,6 +32,7 @@ public class GameManager : MonoBehaviour
     [HideInInspector] public bool wrappedBox = false;
     [HideInInspector] public bool closedBox = false;
     [HideInInspector] public bool addedSticker = false;
+    [SerializeField] private GiftWrapping tapeController;
 
     void Start()
     {
@@ -38,7 +40,8 @@ public class GameManager : MonoBehaviour
         stickerImg.sprite = null;
 
         timeRemaining = 35f;
-        StartNewWave(3);
+        numCustomers = 3;
+        StartNewWave();
     }
 
     void Update()
@@ -55,7 +58,8 @@ public class GameManager : MonoBehaviour
             {
                 Debug.Log($"Wave {wave} over!");
                 timeRemaining = Random.Range(30f, 120f); //reset timer
-                StartNewWave(Random.Range(2, 13));
+                numCustomers = Random.Range(2, 13); //reset num customers
+                StartNewWave();
             }
 
             //handle customers
@@ -64,7 +68,8 @@ public class GameManager : MonoBehaviour
                 //setup customer handling
                 handlingCustomer = true;
                 objectToWrap = Instantiate(giftOptions[Random.Range(0, giftOptions.Length)], objectPosition.position, Quaternion.identity);
-                
+                objectToWrap.GetComponent<Animator>().Play("FadeIn");
+
                 currentCustomer = customers.Peek();
                 //animate customer coming up
                 Animator currentCustomerAnim = currentCustomer.GetComponent<Animator>();
@@ -98,16 +103,37 @@ public class GameManager : MonoBehaviour
                     //animate box fading out
                     AnimateFadeOutObjects();
 
+                    //!!SOMETHING IFFY GOING ON HERE!!
                     //move customers forward
-                    StartCoroutine(ShiftLine(customerLine, 5.2f));
+                    //StartCoroutine(ShiftLine(customerLine, 5.2f));
 
                     //reset requirement checks
-                    addedCorrectBox = false;
-                    wrappedBox = false; 
-                    closedBox = false;
-                    addedSticker = false;
+                    ResetBools();
+                    handlingCustomer = false;
+                    customersServed++;
                 }
             }
+
+            if (customersServed == numCustomers)
+            {
+                numCustomers = Random.Range(2, 13);
+                timeRemaining = Random.Range(30f, 120f); //reset timer
+                StartNewWave();
+            }
+        }
+    }
+
+    void ResetBools()
+    {
+        addedCorrectBox = false;
+        wrappedBox = false;
+        closedBox = false;
+        addedSticker = false;
+        tapeController.holdingTape = false;
+        GameObject[] stickerControllers = GameObject.FindGameObjectsWithTag("StickerButton");
+        foreach (GameObject stickerController in stickerControllers)
+        {
+            stickerController.GetComponent<GiftWrapping>().holdingSticker = false;
         }
     }
 
@@ -168,7 +194,7 @@ public class GameManager : MonoBehaviour
         timerAndWaveText.text = string.Format($"Wave {wave}\n {minutes:00}:{seconds:00}");
     }
 
-    void StartNewWave(int numCustomers)
+    void StartNewWave()
     {
         wave++;
         Debug.Log($"Starting wave {wave}!");
