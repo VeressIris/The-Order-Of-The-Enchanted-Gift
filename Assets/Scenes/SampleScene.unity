@@ -2102,6 +2102,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1801407969}
   - component: {fileID: 1801407970}
+  - component: {fileID: 1801407971}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -2154,6 +2155,27 @@ MonoBehaviour:
   timerAndWaveText: {fileID: 736928480}
   addedCorrectBox: 0
   addedBox: {fileID: 0}
+--- !u!95 &1801407971
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1801407968}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: df2d74f05ce095041ba1f386bd8844db, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1963673150
 GameObject:
   m_ObjectHideFlags: 0

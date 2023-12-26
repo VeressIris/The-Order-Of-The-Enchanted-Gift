@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -12,6 +13,8 @@ public class GiftWrapping : MonoBehaviour
 
     public void AddBox()
     {
+        StartCoroutine(RaiseObject(0.46f));
+
         if (gameManager.addedBox == null)
         {
             gameManager.addedBox = Instantiate(boxPrefab, gameManager.objectPosition.position, Quaternion.identity);
@@ -46,5 +49,32 @@ public class GiftWrapping : MonoBehaviour
         {
             gameManager.addedBox.GetComponent<SpriteRenderer>().sprite = matchingWrappedBoxSprite;
         }
+    }
+
+    private IEnumerator Move(Vector3 targetPos, float duration, float speed)
+    {
+        float time = 0f;
+        while (time < 0.435f)
+        {
+            time += Time.deltaTime;
+
+            gameManager.objectToWrap.transform.position = Vector3.Lerp(gameManager.objectToWrap.transform.position,
+                targetPos, speed * Time.deltaTime);
+            yield return null;
+        }
+    }
+
+    private IEnumerator RaiseObject(float duration)
+    {
+        StartCoroutine(Move(new Vector3(0,0,0), duration, 5.2f));
+        
+        yield return new WaitForSeconds(duration + 0.3f);
+        StartCoroutine(Move(gameManager.objectPosition.transform.position, duration, 5.2f));
+        
+        Animator animator = gameManager.objectToWrap.GetComponent<Animator>();
+        animator.Play("FadeOut", 0);
+
+        yield return new WaitForSeconds(duration);
+        Destroy(gameManager.objectToWrap);
     }
 }
