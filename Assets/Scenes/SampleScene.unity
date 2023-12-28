@@ -326,37 +326,6 @@ MonoBehaviour:
   wrappedBoxSFX: {fileID: 8300000, guid: d898b66ce8c15cf43b91e3ac5ca4c56e, type: 3}
   stickerSFX: {fileID: 0}
   wrongSFX: {fileID: 8300000, guid: 5cbe673cc2cd56c4ba545fc1cb411b91, type: 3}
---- !u!1 &296775582
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 296775583}
-  m_Layer: 0
-  m_Name: CustomerLine
-  m_TagString: Untagged
-  m_Icon: {fileID: -1412012063857583412, guid: 0000000000000000d000000000000000, type: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &296775583
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 296775582}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.08, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &302071970
 GameObject:
   m_ObjectHideFlags: 0
@@ -1697,7 +1666,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 570}
-  m_SizeDelta: {x: 620, y: 50}
+  m_SizeDelta: {x: 1500, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &736928480
 MonoBehaviour:
@@ -2003,7 +1972,7 @@ SpriteRenderer:
   m_SortingLayer: -1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 028e46f143bd50c4080d838e0b26e3d7, type: 3}
-  m_Color: {r: 0.8773585, g: 0.8773585, b: 0.8773585, a: 1}
+  m_Color: {r: 0.9716981, g: 0.9716981, b: 0.9716981, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -3768,7 +3737,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   customerPrefab: {fileID: 8765762472963555598, guid: c9e434dae710386419e1f9876381e0b8, type: 3}
   initCustomerPos: {fileID: 46440988}
-  customerLine: {fileID: 296775582}
   giftOptions:
   - {fileID: 8882748690809470118, guid: ce42e2c882ec7c84fb5e5ffcbdcabf7f, type: 3}
   - {fileID: 1913318328932772269, guid: 11545404fe3e64d498392352c0158a47, type: 3}
@@ -4347,5 +4315,4 @@ SceneRoots:
   - {fileID: 1801407969}
   - {fileID: 1972977035}
   - {fileID: 46440988}
-  - {fileID: 296775583}
   - {fileID: 773238882}

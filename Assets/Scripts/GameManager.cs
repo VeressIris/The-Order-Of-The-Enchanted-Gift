@@ -13,7 +13,6 @@ public class GameManager : MonoBehaviour
     private Queue<Customer> customers = new Queue<Customer>();
     private bool handlingCustomer = false;
     private Customer currentCustomer;
-    [SerializeField] private GameObject customerLine;
     private int numCustomers = 0;
     [Header("Gifts:")]
     [SerializeField] private GameObject[] giftOptions;
@@ -131,11 +130,9 @@ public class GameManager : MonoBehaviour
                     //animate box fading out
                     AnimateFadeOutObjects();
 
-                    foreach (Customer customer in customers)
+                    foreach (Customer customer in customers)    
                     {
                         StartCoroutine(ShiftLine(customer.gameObject, 5.2f));
-                        //customer.gameObject.GetComponent<Animator>().Play("MoveForward", 0);
-                        //customer.transform.position += new Vector3(1.825f, 0f, 0f);
                     }
 
                     //reset requirement checks
@@ -149,10 +146,7 @@ public class GameManager : MonoBehaviour
             if (customersServed == numCustomers)
             {
                 customersServed = 0;
-                //numCustomers = Random.Range(2, 13);
-                //timeRemaining = Random.Range(30f, 120f); //reset timer
-                //StartNewWave();
-                //start cooldown between waves
+
                 if (!countdownRunning)
                 {
                     StartCoroutine(Cooldown(Random.Range(3f, 12f)));
@@ -165,6 +159,8 @@ public class GameManager : MonoBehaviour
     {
         countdownRunning = true;
         timerRunning = false;
+
+        timerAndWaveText.text = "Next wave incoming...";
 
         Debug.Log($"Starting {cooldown} cooldown...");
 
@@ -263,10 +259,6 @@ public class GameManager : MonoBehaviour
 
         for (int i = 0; i < numCustomers; i++)
         {
-            //GameObject customer = Instantiate(customerPrefab, customerLine.transform);
-            //Vector3 position = initCustomerPos.position - new Vector3(1.825f * i, 0f, 0f);
-            //customer.transform.position = position;
-
             GameObject customer = Instantiate(customerPrefab, initCustomerPos.position - new Vector3(1.825f * i, 0f, 0f), Quaternion.identity);
 
             customers.Enqueue(customer.GetComponent<Customer>());
