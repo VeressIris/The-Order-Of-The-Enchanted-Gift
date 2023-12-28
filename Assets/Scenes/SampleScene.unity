@@ -3766,7 +3766,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd3f4c1cdba941145a28e47fea5ed3f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  customerPrefab: {fileID: 6098457270966766729, guid: c7b9704484329364db945ac1612710b5, type: 3}
+  customerPrefab: {fileID: 8765762472963555598, guid: c9e434dae710386419e1f9876381e0b8, type: 3}
   initCustomerPos: {fileID: 46440988}
   customerLine: {fileID: 296775582}
   giftOptions:

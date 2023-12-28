@@ -52,7 +52,7 @@ public class GameManager : MonoBehaviour
         wrappingPaperImg.sprite = null;
         stickerImg.sprite = null;
 
-        timeRemaining = 35f;
+        timeRemaining = 32f;
         timerRunning = true;
         numCustomers = 3;
         StartNewWave();
@@ -73,11 +73,12 @@ public class GameManager : MonoBehaviour
             }
             else
             {
+                Debug.Log("GAME OVER");
+
                 audioSource.clip = gameOverSFX;
                 audioSource.Play();
                 
                 gameOver = true;
-                Debug.Log("GAME OVER");
                 gameOverScreen.SetActive(true);
                 wavesSurvivedText.text = $"Waves survived:\n{wave}";
                 timerAndWaveText.text = "";
@@ -93,8 +94,7 @@ public class GameManager : MonoBehaviour
 
                 currentCustomer = customers.Peek();
                 //animate customer coming up
-                Animator currentCustomerAnim = currentCustomer.GetComponent<Animator>();
-                currentCustomerAnim.enabled = true;
+                Animator currentCustomerAnim = currentCustomer.GetComponentInChildren<Animator>();
                 currentCustomerAnim.Play("Pop up", 0);
 
                 DisplayRequirements(currentCustomer);
@@ -127,13 +127,16 @@ public class GameManager : MonoBehaviour
                     Debug.Log("NEXT CUSTOMER!");
 
                     //animate customer leaving
-                    customers.Dequeue().gameObject.GetComponent<Animator>().Play("Leave");
+                    customers.Dequeue().gameObject.GetComponentInChildren<Animator>().Play("Leave");
                     //animate box fading out
                     AnimateFadeOutObjects();
 
-                    //!!SOMETHING IFFY GOING ON HERE!!
-                    //move customers forward
-                    //StartCoroutine(ShiftLine(customerLine, 5.2f));
+                    foreach (Customer customer in customers)
+                    {
+                        StartCoroutine(ShiftLine(customer.gameObject, 5.2f));
+                        //customer.gameObject.GetComponent<Animator>().Play("MoveForward", 0);
+                        //customer.transform.position += new Vector3(1.825f, 0f, 0f);
+                    }
 
                     //reset requirement checks
                     ResetBools();
@@ -142,37 +145,41 @@ public class GameManager : MonoBehaviour
                 }
             }
 
+            //finished wave
             if (customersServed == numCustomers)
             {
-                numCustomers = Random.Range(2, 13);
-                timeRemaining = Random.Range(30f, 120f); //reset timer
-                StartNewWave();
-                ////start cooldown between waves
-                //if (!countdownRunning)
-                //{
-                //    StartCoroutine(Cooldown());
-                //}
+                customersServed = 0;
+                //numCustomers = Random.Range(2, 13);
+                //timeRemaining = Random.Range(30f, 120f); //reset timer
+                //StartNewWave();
+                //start cooldown between waves
+                if (!countdownRunning)
+                {
+                    StartCoroutine(Cooldown(Random.Range(3f, 12f)));
+                }
             }
         }
     }
 
-    //IEnumerator Cooldown()
-    //{
-    //    countdownRunning = true;
-    //    timerRunning = false;
-        
-    //    Debug.Log("Starting cooldown...");
+    IEnumerator Cooldown(float cooldown)
+    {
+        countdownRunning = true;
+        timerRunning = false;
 
-    //    stickerImg.GetComponent<Animator>().Play("NoDestroyFadeOut");
-    //    wrappingPaperImg.GetComponent<Animator>().Play("NoDestroyFadeOut");
-    //    thinkingBubbleAnim.Play("NoDestroyFadeOut");
-     
-    //    yield return new WaitForSeconds(Random.Range(3f, 12f));
+        Debug.Log($"Starting {cooldown} cooldown...");
+
+        stickerImg.GetComponent<Animator>().Play("ImageFadeOut");
+        wrappingPaperImg.GetComponent<Animator>().Play("ImageFadeOut");
+        thinkingBubbleAnim.Play("NoDestroyFadeOut");
+
+        yield return new WaitForSeconds(cooldown);
         
-    //    numCustomers = Random.Range(2, 13);
-    //    timeRemaining = Random.Range(30f, 120f); //reset timer
-    //    StartNewWave();
-    //}
+        countdownRunning = false;
+
+        numCustomers = Random.Range(2, 13);
+        timeRemaining = Random.Range(30f, 120f); //reset timer
+        StartNewWave();
+    }
 
     void ResetBools()
     {
@@ -188,19 +195,19 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    //IEnumerator ShiftLine(GameObject customer, float speed)
-    //{
-    //    Vector3 targetPos = customer.transform.position + new Vector3(1.825f, 0f, 0f);
-    //    float time = 0f;
-    //    while (time < 1.2f)
-    //    {
-    //        time += Time.deltaTime;
+    IEnumerator ShiftLine(GameObject customer, float speed)
+    {
+        Vector3 targetPos = customer.transform.position + new Vector3(1.825f, 0f, 0f);
+        float time = 0f;
+        while (time < 1.2f)
+        {
+            time += Time.deltaTime;
 
-    //        customer.transform.position = Vector3.Lerp(customer.transform.position, targetPos, speed * Time.deltaTime);
-    //        yield return null;
-    //    }
-    //    yield return new WaitForSeconds(0.1f);
-    //}
+            customer.transform.position = Vector3.Lerp(customer.transform.position, targetPos, speed * Time.deltaTime);
+            yield return null;
+        }
+        yield return new WaitForSeconds(0.1f);
+    }
 
     void AnimateFadeOutObjects()
     {
@@ -247,8 +254,8 @@ public class GameManager : MonoBehaviour
 
     void StartNewWave()
     {
-        stickerImg.GetComponent<Animator>().Play("FadeIn");
-        wrappingPaperImg.GetComponent<Animator>().Play("FadeIn");
+        stickerImg.GetComponent<Animator>().Play("ImageFadeIn");
+        wrappingPaperImg.GetComponent<Animator>().Play("ImageFadeIn");
         thinkingBubbleAnim.Play("FadeIn");
 
         wave++;
@@ -256,10 +263,11 @@ public class GameManager : MonoBehaviour
 
         for (int i = 0; i < numCustomers; i++)
         {
-            GameObject customer = Instantiate(customerPrefab, customerLine.transform);
+            //GameObject customer = Instantiate(customerPrefab, customerLine.transform);
+            //Vector3 position = initCustomerPos.position - new Vector3(1.825f * i, 0f, 0f);
+            //customer.transform.position = position;
 
-            Vector3 position = initCustomerPos.position - new Vector3(1.825f * i, 0f, 0f);
-            customer.transform.position = position;
+            GameObject customer = Instantiate(customerPrefab, initCustomerPos.position - new Vector3(1.825f * i, 0f, 0f), Quaternion.identity);
 
             customers.Enqueue(customer.GetComponent<Customer>());
         }
