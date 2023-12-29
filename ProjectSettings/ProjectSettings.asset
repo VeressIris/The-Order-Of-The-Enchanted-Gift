@@ -14,7 +14,7 @@ PlayerSettings:
   accelerometerFrequency: 60
   companyName: MidnightDove
   productName: The Order Of The Enchanted Gift
-  defaultCursor: {fileID: 2800000, guid: 026df251f5dfebe47a2f6ee982ca0c30, type: 3}
+  defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.16470589, g: 0.1254902, b: 0.16470589, a: 1}
   m_ShowUnitySplashScreen: 1
