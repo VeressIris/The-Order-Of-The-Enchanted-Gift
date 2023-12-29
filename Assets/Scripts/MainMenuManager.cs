@@ -8,9 +8,11 @@ public class MainMenuManager : MonoBehaviour
     [SerializeField] private GameObject OptionsMenu;
     [SerializeField] private GameObject MainMenu;
     private bool optionsOpen = false;
+    [SerializeField] private Animator transitionAnim;
 
     private void Start()
     {
+        Time.timeScale = 1;
         optionsOpen = false;
         OptionsMenu.SetActive(false);
         MainMenu.SetActive(true);
@@ -18,7 +20,14 @@ public class MainMenuManager : MonoBehaviour
 
     public void Play()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        StartCoroutine(LoadScene(SceneManager.GetActiveScene().buildIndex + 1));
+    }
+
+    IEnumerator LoadScene(int scene)
+    {
+        transitionAnim.SetTrigger("start");
+        yield return new WaitForSeconds(0.6f);
+        SceneManager.LoadScene(scene);
     }
 
     public void Quit()

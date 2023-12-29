@@ -10,7 +10,7 @@ public class ChangeCursor : MonoBehaviour
 
     private void Start()
     {
-        if (PlayerPrefs.GetInt("CustomCursor", 1) == 1)
+        if (PlayerPrefs.GetInt("CustomCursor", 1) == 1 || !PlayerPrefs.HasKey("CustomCursor"))
         {
             Cursor.SetCursor(customCursor, Vector2.zero, CursorMode.Auto);
         }
