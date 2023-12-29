@@ -74,7 +74,7 @@ public class GiftWrapping : MonoBehaviour
     {
         if (gameManager.addedCorrectBox)
         {
-            if (GetComponent<Image>().sprite == gameManager.wrappingPaperImg.sprite)
+            if (GetComponent<Image>().sprite == gameManager.wrappingPaperSR.sprite)
             {
                 Destroy(GameObject.FindGameObjectWithTag("Tape"));
                 tapeButtonController.holdingTape = false;
@@ -133,7 +133,7 @@ public class GiftWrapping : MonoBehaviour
         GameObject tapeInstance = GameObject.FindGameObjectWithTag("Tape");
         if (!holdingSticker && gameManager.wrappedBox)
         {
-            if (stickerPrefab.GetComponent<SpriteRenderer>().sprite == gameManager.stickerImg.sprite)
+            if (stickerPrefab.GetComponent<SpriteRenderer>().sprite == gameManager.stickerSR.sprite)
             {
                 if (tapeInstance != null && tapeInstance.GetComponent<TapeController>().placed)
                 {

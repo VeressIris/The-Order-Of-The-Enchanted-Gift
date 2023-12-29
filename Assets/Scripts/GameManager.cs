@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using TMPro;
 
 public class GameManager : MonoBehaviour
@@ -17,8 +16,8 @@ public class GameManager : MonoBehaviour
     [Header("Gifts:")]
     [SerializeField] private GameObject[] giftOptions;
     public Transform objectPosition;
-    public Image wrappingPaperImg;
-    public Image stickerImg;
+    public SpriteRenderer wrappingPaperSR;
+    public SpriteRenderer stickerSR;
     public GameObject objectToWrap;
     [SerializeField] private Sprite closedBoxSprite;
     [Header("Game:")]
@@ -47,9 +46,9 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         gameOverScreen.SetActive(false);
-        
-        wrappingPaperImg.sprite = null;
-        stickerImg.sprite = null;
+
+        wrappingPaperSR.sprite = null;
+        stickerSR.sprite = null;
 
         timeRemaining = 32f;
         timerRunning = true;
@@ -164,8 +163,8 @@ public class GameManager : MonoBehaviour
 
         Debug.Log($"Starting {cooldown} cooldown...");
 
-        stickerImg.GetComponent<Animator>().Play("ImageFadeOut");
-        wrappingPaperImg.GetComponent<Animator>().Play("ImageFadeOut");
+        stickerSR.GetComponent<Animator>().Play("NoDestroyFadeOut");
+        wrappingPaperSR.GetComponent<Animator>().Play("NoDestroyFadeOut");
         thinkingBubbleAnim.Play("NoDestroyFadeOut");
 
         yield return new WaitForSeconds(cooldown);
@@ -250,8 +249,8 @@ public class GameManager : MonoBehaviour
 
     void StartNewWave()
     {
-        stickerImg.GetComponent<Animator>().Play("ImageFadeIn");
-        wrappingPaperImg.GetComponent<Animator>().Play("ImageFadeIn");
+        stickerSR.GetComponent<Animator>().Play("FadeIn");
+        wrappingPaperSR.GetComponent<Animator>().Play("FadeIn");
         thinkingBubbleAnim.Play("FadeIn");
 
         wave++;
@@ -269,7 +268,7 @@ public class GameManager : MonoBehaviour
 
     void DisplayRequirements(Customer currentCustomer)
     {
-        wrappingPaperImg.sprite = currentCustomer.wrappingPaperImg;
-        stickerImg.sprite = currentCustomer.stickerImg;
+        wrappingPaperSR.sprite = currentCustomer.wrappingPaperImg;
+        stickerSR.sprite = currentCustomer.stickerImg;
     }
 }
