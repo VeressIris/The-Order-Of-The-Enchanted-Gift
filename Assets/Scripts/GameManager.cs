@@ -43,7 +43,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private AudioClip nextCustomerSFX;
     [SerializeField] private AudioClip gameOverSFX;
 
-    void Start()
+    void Awake()
     {
         gameOverScreen.SetActive(false);
 

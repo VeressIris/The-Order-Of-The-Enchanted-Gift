@@ -9,7 +9,7 @@ public class Customer : MonoBehaviour
     public Sprite wrappingPaperImg;
     public Sprite stickerImg;
 
-    void Start()
+    void Awake()
     {
         wrappingPaperImg = wrappingPaperOptions[Random.Range(0, wrappingPaperOptions.Length)];
         stickerImg = stickerOptions[Random.Range(0, stickerOptions.Length)];
