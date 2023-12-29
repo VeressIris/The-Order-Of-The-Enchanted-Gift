@@ -23,7 +23,7 @@ public class GiftWrapping : MonoBehaviour
 
     public void AddBox()
     {
-        if (gameManager.addedCorrectBox) 
+        if (gameManager.addedCorrectBox || gameManager.gameOver) 
             return;
 
         StartCoroutine(RaiseObject(0.46f));
@@ -61,6 +61,9 @@ public class GiftWrapping : MonoBehaviour
 
     public void AddDuctTape()
     {
+        if (gameManager.gameOver)
+            return;
+
         if (!holdingTape && (gameManager.closedBox || gameManager.wrappedBox))
         {
             holdingTape = true;
@@ -72,6 +75,9 @@ public class GiftWrapping : MonoBehaviour
 
     public void WrapBox()
     {
+        if (gameManager.gameOver)
+            return;
+
         if (gameManager.addedCorrectBox)
         {
             if (GetComponent<Image>().sprite == gameManager.wrappingPaperSR.sprite)
@@ -130,6 +136,9 @@ public class GiftWrapping : MonoBehaviour
 
     public void AddSticker()
     {
+        if (gameManager.gameOver)
+            return;
+
         GameObject tapeInstance = GameObject.FindGameObjectWithTag("Tape");
         if (!holdingSticker && gameManager.wrappedBox)
         {

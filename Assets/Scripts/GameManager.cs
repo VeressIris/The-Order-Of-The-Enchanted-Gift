@@ -22,12 +22,12 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Sprite closedBoxSprite;
     [Header("Game:")]
     [SerializeField] private TMP_Text timerAndWaveText;
-    private bool gameOver = false;
+    [HideInInspector] public bool gameOver = false;
     private int wave = 0;
     private float timeRemaining;
     public bool addedCorrectBox = false;
     public GameObject addedBox;
-    private bool timerRunning = true;
+    [HideInInspector] public bool timerRunning = true;
     private bool countdownRunning = false;
     [HideInInspector] public bool wrappedBox = false;
     [HideInInspector] public bool closedBox = false;
@@ -102,7 +102,7 @@ public class GameManager : MonoBehaviour
                 
                 gameOver = true;
                 gameOverScreen.SetActive(true);
-                wavesSurvivedText.text = $"Waves survived:\n{wave}";
+                wavesSurvivedText.text = $"Waves survived:\n{wave - 1}";
                 timerAndWaveText.text = "";
             }
 
