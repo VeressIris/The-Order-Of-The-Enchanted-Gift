@@ -37,6 +37,8 @@ public class GameManager : MonoBehaviour
     [Header("UI")]
     [SerializeField] private GameObject gameOverScreen;
     [SerializeField] private TMP_Text wavesSurvivedText;
+    [SerializeField] private GameObject pauseScreen;
+    private bool paused = false;
     [Header("SFX")]
     [SerializeField] private AudioSource audioSource;
     [SerializeField] private AudioClip closeBoxSFX;
@@ -50,6 +52,10 @@ public class GameManager : MonoBehaviour
         wrappingPaperSR.sprite = null;
         stickerSR.sprite = null;
 
+        paused = false;
+        Time.timeScale = 1f;
+        pauseScreen.SetActive(false);
+
         timeRemaining = 32f;
         timerRunning = true;
         numCustomers = 3;
@@ -60,10 +66,28 @@ public class GameManager : MonoBehaviour
     {
         if (!gameOver)
         {
+            //pausing:
+            if (Input.GetKeyDown(KeyCode.P))
+            {
+                if (!paused)
+                {
+                    Time.timeScale = 0f;
+                    pauseScreen.SetActive(true);
+                    timerAndWaveText.text = "";
+                    paused = true;
+                }
+                else
+                {
+                    Time.timeScale = 1f;
+                    pauseScreen.SetActive(false);
+                    paused = false;
+                }
+            }
+
             //timer
             if (timeRemaining > 0f)
             {
-                if (timerRunning)
+                if (timerRunning && !paused)
                 {
                     timeRemaining -= Time.deltaTime;
                     UpdateTimer(timeRemaining);
@@ -270,5 +294,12 @@ public class GameManager : MonoBehaviour
     {
         wrappingPaperSR.sprite = currentCustomer.wrappingPaperImg;
         stickerSR.sprite = currentCustomer.stickerImg;
+    }
+
+    public void Return()
+    {
+        paused = false;
+        pauseScreen.SetActive(false);
+        Time.timeScale = 1f;
     }
 }
